@@ -1,0 +1,26 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "Tport Admin 2.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joosung21/admin.git"
+  },
+  "author": "Jay Ahn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joosung21/admin/issues"
+  },
+  "homepage": "https://github.com/joosung21/admin#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "pug": "^2.0.3",
+    "sweetalert2": "^7.20.7"
+  }
+}
