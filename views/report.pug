@@ -1,0 +1,163 @@
+include ./includes/header.pug
+#outter-wrapper
+  include ./includes/left-nav.pug
+  #inner-wrapper
+    include ./includes/top-nav.pug
+
+    #content
+      .page-title 리포트
+      .head-filter
+        .form-inline
+          select.custom-select.mr-4
+            option 판매일시
+            option 체크인
+          input.form-control.form-control-datepicker(type='text', value='2017.07.16(수)', style='width: 10rem')
+          span.px-2 ~
+          input.form-control.form-control-datepicker(type='text', value='2017.08.20(목)', style='width: 10rem')
+          button.btn.btn-primary.ml-2(type='button') 불러오기
+          .btn-group.btn-group-toggle.mx-4(data-toggle='buttons')
+            label.btn.btn-white
+              input(type='radio', name='options', autocomplete='off')
+              |  어제
+            label.btn.btn-white
+              input(type='radio', name='options', autocomplete='off')
+              |  오늘
+            label.btn.btn-white
+              input(type='radio', name='options', autocomplete='off')
+              |  최근 1주
+            label.btn.btn-white.active
+              input(type='radio', name='options', autocomplete='off')
+              |  최근 1개월
+
+      table#summary-table.table.table-bordered.text-center.align-middle
+        tr
+          td
+            .title 총계
+            .total
+              | 9,539,500
+              span.currency 원
+            .number 62박
+          td
+            .title 판매완료
+            .total
+              span.text-blue 9,521,800
+              span.currency 원
+            .number 74건
+          td
+            .title 판매취소
+            .total
+              span.text-red 171,700
+              span.currency 원
+            .number 2건
+
+      .py-5
+
+      .section-title 판매사별 매출
+      table.table.text-center.align-middle
+        thead.bg-light
+          tr
+            th.sortable.text-left.pl-5
+              | 판매사명
+              small.ml-1 (판매업체 수)
+            th.text-right.sortable.w-25 판매완료
+            th.text-right.sortable.w-25 판매취소
+            th.text-right.sortable.pr-5.w-25 매출액
+        tbody
+          tr
+            td.text-left.pl-5
+              | 티몬
+              span.small.text-muted.pl-2 (5,058개)
+            td.text-right
+              | 3,692,200
+              span.small.text-muted.pl-2 (34건)
+            td.text-right
+              | 17,700
+              span.small.text-muted.pl-2 (2건)
+            td.text-right.pr-5
+              | 3,709,900
+              span.small.text-muted.pl-2 (36박)
+          tr
+            td.text-left.pl-5
+              | 야놀자
+              span.small.text-muted.pl-2 (601개)
+            td.text-right
+              | 350,000
+              span.small.text-muted.pl-2 (3건)
+            td.text-right
+              | 0
+              span.small.text-muted.pl-2 (0건)
+            td.text-right.pr-5
+              | 350,000
+              span.small.text-muted.pl-2 (1박)
+          tr
+            td.text-left.pl-5
+              | 호텔엔조이
+              span.small.text-muted.pl-2 (2,436개)
+            td.text-right
+              | 82,800
+              span.small.text-muted.pl-2 (1건)
+            td.text-right
+              | 0
+              span.small.text-muted.pl-2 (0건)
+            td.text-right.pr-5
+              | 82,800
+              span.small.text-muted.pl-2 (1박)
+
+      .py-5
+
+      .section-title 공급사별 매출
+      table.table.text-center.align-middle
+        thead.bg-light
+          tr
+            th.sortable.text-left.pl-5
+              | 판매사명
+              small.ml-1 (판매업체 수)
+            th.text-right.sortable.w-25 판매완료
+            th.text-right.sortable.w-25 판매취소
+            th.text-right.sortable.pr-5.w-25 매출액
+        tbody
+          tr
+            td.text-left.pl-5
+              | 티몬
+              span.small.text-muted.pl-2 (5,058개)
+            td.text-right
+              | 3,692,200
+              span.small.text-muted.pl-2 (34건)
+            td.text-right
+              | 17,700
+              span.small.text-muted.pl-2 (2건)
+            td.text-right.pr-5
+              | 3,709,900
+              span.small.text-muted.pl-2 (36박)
+          tr
+            td.text-left.pl-5
+              | 야놀자
+              span.small.text-muted.pl-2 (601개)
+            td.text-right
+              | 350,000
+              span.small.text-muted.pl-2 (3건)
+            td.text-right
+              | 0
+              span.small.text-muted.pl-2 (0건)
+            td.text-right.pr-5
+              | 350,000
+              span.small.text-muted.pl-2 (1박)
+          tr
+            td.text-left.pl-5
+              | 호텔엔조이
+              span.small.text-muted.pl-2 (2,436개)
+            td.text-right
+              | 82,800
+              span.small.text-muted.pl-2 (1건)
+            td.text-right
+              | 0
+              span.small.text-muted.pl-2 (0건)
+            td.text-right.pr-5
+              | 82,800
+              span.small.text-muted.pl-2 (1박)
+
+
+
+
+    include ./includes/footer.pug
+

@@ -1,1 +1,238 @@
 //----------- Variables -----------//
+$primary: #384C67
+$blue: #4B95FF
+$red: #F4516C
+$light: #C4C4C4
+$washed-navy: #7D90A8
+$white-gray: #f1f3f8
+$border-color: #e5e5e5
+
+//------------ Extends -------------//
+%display-flex
+  display: table-cell // ie9
+  display: -ms-flexbox // ie10
+  display: -webkit-box
+  display: flex
+
+//------------ Initiate ------------//
+html
+  font-size: 14px
+
+label.label-necessary
+  &:after
+    content: '*'
+    color: $red
+    padding-left: .4rem
+    position: relative
+    top: .4rem
+    font-size: 1.2rem
+    line-height: 1rem
+
+a
+  cursor: pointer
+  text-decoration: none !important
+
+a:focus, a:active, .btn:focus, .btn:active
+  outline: none !important
+  box-shadow: none
+
+small, .small
+  font-size: 12px
+
+.text-red
+  color: $red !important
+.text-blue
+  color: $blue !important
+.text-muted
+  color: #aaaaaa !important
+
+a.link
+  color: #4C4C4C
+  text-decoration: none
+
+.btn-white
+  border-color: $border-color
+  color: #4F4F4F
+  background-color: white
+  &:hover
+    color: #4F4F4F
+  i.fa
+    color: #999999
+  &.active
+    background-color: $washed-navy
+    border-color: $washed-navy
+    color: white
+  &.focus
+    outline: none !important
+    box-shadow: none
+
+.btn.btn-small
+  font-size: .9rem
+  font-weight: 300
+  padding: .5rem .7rem
+
+.btn.warning-mark
+  position: relative
+  &:after
+    position: absolute
+    top: -10px
+    right: -10px
+    content: ' '
+    width: 20px
+    height: 20px
+    background: url('/images/notice_circle.svg') 0 0 no-repeat
+
+.btn-group-radio
+  .btn-white
+    &.active
+      background-color: $white-gray
+      color: #4F4F4F
+      + .btn-white
+        border-left: 1px solid $washed-navy
+
+.form-control-datepicker
+  background: url('/images/ic-calendar-gray.svg') center right .5rem no-repeat
+
+.custom-select.inline
+  width: auto
+
+.table
+  td
+    padding: 1rem .5rem
+    &.dimed
+      opacity: .4
+  thead th
+    border: 0
+    padding: 1.2rem .5rem
+    font-weight: 600
+    &.sortable
+      cursor: pointer
+      &:after
+        position: relative
+        content: url('/images/sort.svg')
+        top: 1px
+        margin-left: .5rem
+  tbody
+    td, th
+      border-top: 0
+      border-bottom: 1px solid $border-color
+  &.align-middle
+    td, th
+      vertical-align: middle
+  tr.dimed
+    td
+      opacity: .4
+
+.pagination
+  .page-link
+    height: 2.7rem
+    padding: .7rem .9rem
+  .page-link.icon
+    padding: 7px 8px
+    img
+      width: 1.2rem
+  .page-item.disabled
+    .page-link.icon
+      img
+        opacity: .4
+
+.modal-header .close
+  padding: 0 1.5rem
+  opacity: 1
+  margin: -.12rem 0
+
+.modal-body
+  .form-group
+    margin-bottom: 30px
+
+//------------ Layout --------------//
+#outter-wrapper
+  @extend %display-flex
+  align-items: stretch
+#inner-wrapper
+  width: calc(100% - 220px)
+  min-width: 1000px
+
+#left-nav
+  flex-shrink: 0
+  width: 220px
+  background-color: $primary
+  color: white
+  font-weight: 300
+  .title
+    display: block
+    font-size: 20px
+    text-align: center
+    margin: 20px 0 50px 0
+    color: white
+  nav
+    a
+      @extend %display-flex
+      align-items: center
+      color: white
+      padding: 14px 30px
+      transition: background .3s
+      img
+        margin-right: 10px
+      &:hover
+        background-color: lighten($primary, 2%)
+      &.active
+        background-color: #53627E
+
+#content
+  padding: 40px 40px 80px 40px
+  min-height: calc(100vh - 120px)
+  .page-title
+    font-size: 18px
+    font-weight: 600
+    margin-bottom: 30px
+  .head-filter
+    border: 1px solid #929292
+    padding: 20px 40px
+    margin-bottom: 40px
+  .section-title
+    font-size: 18px
+    margin-bottom: 1em
+
+footer
+  @extend %display-flex
+  align-items: center
+  height: 50px
+  font-size: 12px
+  padding: 0 40px
+  border-top: 1px solid $border-color
+
+#top-nav
+  @extend %display-flex
+  align-items: center
+  justify-content: flex-end
+  height: 70px
+  border-bottom: 1px solid $border-color
+  padding: 0 40px
+  a
+    text-decoration: none
+  > a
+    margin-left: 40px
+    padding: 10px 0
+  .dropdown-menu
+    .group-name
+      padding: .25rem 1.5rem
+      font-size: 12px
+      color: $light
+
+//------------ Pages --------------//
+
+// Report Summary Table
+#summary-table
+  td
+    padding: 24px
+    width: calc(100% / 3)
+  .title
+    font-size: 18px
+  .total
+    font-size: 28px
+    line-height: 28px
+    margin: 20px 0
+    .currency
+      font-size: 18px
+      margin-left: .25rem

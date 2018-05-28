@@ -1,25 +1,223 @@
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    link(rel='shortcut icon', type='image/png', href='/assets/images/favicon.png')
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Penppy2
+include ./includes/header.pug
+#outter-wrapper
+  include ./includes/left-nav.pug
+  #inner-wrapper
+    include ./includes/top-nav.pug
 
-    //- styles
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
-    link(rel='stylesheet', href='https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css')
-    link(rel='stylesheet', href='/node_modules/sweetalert2/dist/sweetalert2.min.css')
-    link(rel='stylesheet', href='/css/custom.css')
-    link(rel='stylesheet', href='/css/admin.css')
+    #content
+      .page-title 판매내역
+      .head-filter
+        .form-inline
+          select.custom-select.mr-4
+            option 판매일시
+            option 체크인
+          input.form-control.form-control-datepicker(type='text', value='2017.07.16(수)', style='width: 10rem')
+          span.px-2 ~
+          input.form-control.form-control-datepicker(type='text', value='2017.08.20(목)', style='width: 10rem')
+          button.btn.btn-primary.ml-2(type='button') 불러오기
+          .btn-group.btn-group-toggle.mx-4(data-toggle='buttons')
+            label.btn.btn-white
+              input(type='radio', name='options', autocomplete='off')
+              |  어제
+            label.btn.btn-white
+              input(type='radio', name='options', autocomplete='off')
+              |  오늘
+            label.btn.btn-white
+              input(type='radio', name='options', autocomplete='off')
+              |  최근 1주
+            label.btn.btn-white.active
+              input(type='radio', name='options', autocomplete='off')
+              |  최근 1개월
+          .input-group
+            input.form-control(type="text", placeholder='예약자명/연락처/요청사항/메모', style='width: 17rem')
+            .input-group-append
+              button.btn.btn-primary.py-0.px-2(type='button')
+                img(src='/images/search_white.svg', style='margin-top: -.2rem')
 
-    //- scripts
-    script(src='/node_modules/jquery/dist/jquery.min.js')
-    script(src='/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
-    script(src='/node_modules/sweetalert2/dist/sweetalert2.min.js')
-    script(src='/js/admin.js')
+      .form-inline.mb-3
+        select.custom-select.mr-2
+          option 20개씩 보기
+        select.custom-select.mr-2
+          option 판매사
+        select.custom-select.mr-2
+          option 공급사
+        select.custom-select.mr-2
+          option 판매 완료 및 취소
+        small.text-muted 16건의 예약목록을 불러왔습니다.
+        button.btn.btn-white.ml-auto(type='button')
+          img.mr-1(src='/images/refresh.svg')
+          | 쿠폰정보 새로고침
+        button.btn.btn-white.ml-2(type='button')
+          img.mr-1(src='/images/download.svg')
+          | CVS 다운로드
 
-  body
-    h1 Tport Admin 2.0
-    .lead Start Project test
+      table.table.text-center.align-middle
+        thead.bg-light
+          tr
+            th.sortable 예약번호
+            th 판매채널
+            th 공급사
+            th 지역
+            th 숙소명
+            th 객실명
+            th 고객명
+            th.sortable 판매일시
+            th.sortable 체크인
+            th 결제금액
+            th 상태
+        tbody
+          tr
+            td.text-left.pl-4 11ST-P8O9T88B3
+            td 11번가
+            td 야놀자(판매대행)
+            td 충남, 태안군
+            td 태안 오투오펜션
+            td 쟈스민
+            td
+              span 정우성
+              button.btn.btn-white.btn-small.warning-mark.ml-2(type='button', data-toggle='modal', data-target='#smsModal') SMS
+            td
+              | 2017-03-20
+              br
+              | 00:03
+            td
+              | 2017-03-20
+              br
+              | (1박)
+            td 80,000원
+            td 판매완료
+          tr
+            td.text-left.pl-4 11ST-P8O9T88B3
+            td 11번가
+            td 야놀자(판매대행)
+            td 충남, 태안군
+            td 태안 오투오펜션
+            td 쟈스민
+            td
+              span 정우성
+              button.btn.btn-white.btn-small.ml-2(type='button', data-toggle='modal', data-target='#smsModal') SMS
+            td
+              | 2017-03-20
+              br
+              | 00:03
+            td
+              | 2017-03-20
+              br
+              | (1박)
+            td 80,000원
+            td
+              .text-red
+                | 판매취소
+                .small (6일전 취소, 100%환불)
+          tr
+            td.text-left.pl-4 11ST-P8O9T88B3
+            td 11번가
+            td 야놀자(판매대행)
+            td 충남, 태안군
+            td 태안 오투오펜션
+            td 쟈스민
+            td
+              span 정우성
+              button.btn.btn-white.btn-small.ml-2(type='button', data-toggle='modal', data-target='#smsModal') SMS
+            td
+              | 2017-03-20
+              br
+              | 00:03
+            td
+              | 2017-03-20
+              br
+              | (1박)
+            td 80,000원
+            td 판매완료
+
+      nav.mt-5
+        ul.pagination.justify-content-center
+          li.page-item.disabled
+            .page-link.icon
+              img(src='/images/go-first.svg')
+          li.page-item.disabled
+            .page-link.icon
+              img(src='/images/go-pre.svg')
+          li.page-item.active
+            span.page-link 1
+          li.page-item
+            a.page-link(href='#') 2
+          li.page-item
+            a.page-link(href='#') 3
+          li.page-item
+            a.page-link(href='#') 4
+          li.page-item
+            a.page-link(href='#') 5
+          li.page-item
+            span.page-link.icon
+              img(src='/images/go-next.svg')
+          li.page-item
+            span.page-link.icon
+              img(src='/images/go-last.svg')
+
+
+    include ./includes/footer.pug
+
+
+//- SMS 발신내역 Modal
+#smsModal.modal.fade(tabindex='-1')
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        h5.modal-title SMS 발신내역
+        a.close(data-dismiss='modal')
+          img(src='/images/close.svg')
+      .modal-body
+        table.table.text-center.align-middle
+          thead.bg-light
+            tr
+              th 메세지
+              th 발신번호
+              th 수신번호
+              th 발송일시
+              th 상태
+          tbody
+            tr
+              td.text-left
+                div(style='white-space: pre-wrap').
+                  [ONDA(티포트)] 예약이 취소되었습니다.
+                  - 예약채널: TMON
+                  - 예약번호: TM-P5GGUKA4T
+                  - 예약자명: 박혜연
+                  - 연락처: 01029972659
+                  - 업체명: [파주]임진강리조트
+                  - 객실명: 콘도(온돌)
+                  - 이용기간: 2018.03.24.(토)~2018.03.25.(일)
+                  (1박 2일)
+                  - 결제금액: 55,000원
+              td 1544-3812
+              td 010-1111-2222
+              td
+                | 2017-03-20
+                br
+                | 15:20
+              td
+                .text-red 전송실패
+                .small.text-muted 6625 NPDB 에러
+            tr
+              td.text-left
+                div(style='white-space: pre-wrap').
+                  [ONDA(티포트)] 예약이 취소되었습니다.
+                  - 예약채널: TMON
+                  - 예약번호: TM-P5GGUKA4T
+                  - 예약자명: 박혜연
+                  - 연락처: 01029972659
+                  - 업체명: [파주]임진강리조트
+                  - 객실명: 콘도(온돌)
+                  - 이용기간: 2018.03.24.(토)~2018.03.25.(일)
+                  (1박 2일)
+                  - 결제금액: 55,000원
+              td 1544-3812
+              td 010-1111-2222
+              td
+                | 2017-03-20
+                br
+                | 15:20
+              td
+                | 전송완료
+                .small.text-muted 1111 전달

@@ -1,0 +1,30 @@
+#left-nav
+  a.title(href='/') T Port ADMIN
+  nav
+    a(href='/sales', class=(page_name === 'sales' ? 'active' : undefined))
+      img(src='/images/ic-list.svg')
+      | 판매내역
+    a(href='/report', class=(page_name === 'report' ? 'active' : undefined))
+      img(src='/images/ic-chart.svg')
+      | 리포트
+    a(href='#')
+      img(src='/images/ic-caculator.svg')
+      | 공급사 정산
+    a(href='/payment/seller', class=(page_name === 'payment-seller' ? 'active' : undefined))
+      img(src='/images/ic-caculator.svg')
+      | 숙소정산
+    a(href='#')
+      img(src='/images/ic-slider.svg')
+      | 공급사 관리
+    a(href='#')
+      img(src='/images/ic-slider.svg')
+      | 판매사 관리
+    a(href='/tport/sellers', class=(page_name === 'tport-sellers' ? 'active' : undefined))
+      img(src='/images/ic-slider.svg')
+      | 숙소관리
+    a(href='#')
+      img(src='/images/ic-gear.svg')
+      | 계정관리
+    a(href='#')
+      img(src='/images/ic-gear.svg')
+      | 코드관리
