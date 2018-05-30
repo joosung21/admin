@@ -1,103 +1,102 @@
 include ./includes/header.pug
-#outter-wrapper
-  include ./includes/left-nav.pug
-  #inner-wrapper
-    include ./includes/top-nav.pug
+include ./includes/left-nav.pug
+#inner-wrapper
+  include ./includes/top-nav.pug
 
-    #content
-      .page-title 숙소 관리
-      .head-filter
-        .form-inline
-          .input-group
-            input.form-control(type="text", placeholder='숙소번호(숫자)/숙소명', style='width: 17rem')
-            .input-group-append
-              button.btn.btn-primary.py-0.px-2(type='button')
-                img(src='/images/search_white.svg', style='margin-top: -.2rem')
+  #content
+    .page-title 숙소 관리
+    .head-filter
+      .form-inline
+        .input-group
+          input.form-control(type="text", placeholder='숙소번호(숫자)/숙소명', style='width: 17rem')
+          .input-group-append
+            button.btn.btn-primary.py-0.px-2(type='button')
+              img(src='/images/search_white.svg', style='margin-top: -.2rem')
 
-      .form-inline.mb-3
-        select.custom-select.mr-2
-          option 20개씩 보기
-        select.custom-select.mr-2
-          option 숙박분류
-        select.custom-select.mr-2
-          option PMS상태
-        select.custom-select.mr-2
-          option GDS상태
-        select.custom-select.mr-2
-          option 공급사
-        select.custom-select.mr-2
-          option 판매사
-        small.text-muted 16개의 숙소를 불러왔습니다.
-        small.text-blue.ml-auto.mr-2 최종 업데이트: 2018-05-14 15:34
-        button.btn.btn-white.ml-2(type='button')
-          img.mr-1(src='/images/refresh.svg')
-          | 숙소 새로고침
-        button.btn.btn-white.ml-2(type='button')
-          img.mr-1(src='/images/plus.svg')
-          | 숙소 등록
+    .form-inline.mb-3
+      select.custom-select.mr-2
+        option 20개씩 보기
+      select.custom-select.mr-2
+        option 숙박분류
+      select.custom-select.mr-2
+        option PMS상태
+      select.custom-select.mr-2
+        option GDS상태
+      select.custom-select.mr-2
+        option 공급사
+      select.custom-select.mr-2
+        option 판매사
+      small.text-muted 16개의 숙소를 불러왔습니다.
+      small.text-blue.ml-auto.mr-2 최종 업데이트: 2018-05-14 15:34
+      button.btn.btn-white.ml-2(type='button')
+        img.mr-1(src='/images/refresh.svg')
+        | 숙소 새로고침
+      button.btn.btn-white.ml-2(type='button')
+        img.mr-1(src='/images/plus.svg')
+        | 숙소 등록
 
-      table.table.text-center.align-middle
-        thead.bg-light
-          tr
-            th.sortable 번호
-            th.sortable 분류
-            th.sortable 지역
-            th.sortable 숙소명
-            th 공급사
-            th.sortable 상태
-            th.sortable 최종 수정일
-        tbody
-          tr
-            td 3678
-            td 펜션
-            td 지역없음
-            td 이름없음
-            td StayWith
-            td 판매 (검수대기)
-            td 2018-05-18
-          tr
-            td 3678
-            td 펜션
-            td 지역없음
-            td 이름없음
-            td StayWith
-            td 판매 (검수대기)
-            td 2018-05-18
-          tr
-            td 3678
-            td 펜션
-            td 지역없음
-            td 이름없음
-            td StayWith
-            td 판매 (검수대기)
-            td 2018-05-18
-      nav.mt-5
-        ul.pagination.justify-content-center
-          li.page-item.disabled
-            .page-link.icon
-              img(src='/images/go-first.svg')
-          li.page-item.disabled
-            .page-link.icon
-              img(src='/images/go-pre.svg')
-          li.page-item.active
-            span.page-link 1
-          li.page-item
-            a.page-link(href='#') 2
-          li.page-item
-            a.page-link(href='#') 3
-          li.page-item
-            a.page-link(href='#') 4
-          li.page-item
-            a.page-link(href='#') 5
-          li.page-item
-            span.page-link.icon
-              img(src='/images/go-next.svg')
-          li.page-item
-            span.page-link.icon
-              img(src='/images/go-last.svg')
+    table.table.text-center.align-middle
+      thead.bg-light
+        tr
+          th.sortable 번호
+          th.sortable 분류
+          th.sortable 지역
+          th.sortable 숙소명
+          th 공급사
+          th.sortable 상태
+          th.sortable 최종 수정일
+      tbody
+        tr
+          td 3678
+          td 펜션
+          td 지역없음
+          td 이름없음
+          td StayWith
+          td 판매 (검수대기)
+          td 2018-05-18
+        tr
+          td 3678
+          td 펜션
+          td 지역없음
+          td 이름없음
+          td StayWith
+          td 판매 (검수대기)
+          td 2018-05-18
+        tr
+          td 3678
+          td 펜션
+          td 지역없음
+          td 이름없음
+          td StayWith
+          td 판매 (검수대기)
+          td 2018-05-18
+    nav.mt-5
+      ul.pagination.justify-content-center
+        li.page-item.disabled
+          .page-link.icon
+            img(src='/images/go-first.svg')
+        li.page-item.disabled
+          .page-link.icon
+            img(src='/images/go-pre.svg')
+        li.page-item.active
+          span.page-link 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#') 4
+        li.page-item
+          a.page-link(href='#') 5
+        li.page-item
+          span.page-link.icon
+            img(src='/images/go-next.svg')
+        li.page-item
+          span.page-link.icon
+            img(src='/images/go-last.svg')
 
 
-    include ./includes/footer.pug
+  include ./includes/footer.pug
 
 
 

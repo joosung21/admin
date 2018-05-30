@@ -1,132 +1,131 @@
 include ./includes/header.pug
-#outter-wrapper
-  include ./includes/left-nav.pug
-  #inner-wrapper
-    include ./includes/top-nav.pug
+include ./includes/left-nav.pug
+#inner-wrapper
+  include ./includes/top-nav.pug
 
-    #content
-      .page-title 숙소 정산
-      .head-filter
-        .form-inline
-          input.form-control.form-control-datepicker(type='text', value='2017.07.16(수)', style='width: 10rem')
-          span.px-2 ~
-          input.form-control.form-control-datepicker(type='text', value='2017.08.20(목)', style='width: 10rem')
-          button.btn.btn-primary.ml-2(type='button') 불러오기
-          .btn-group.btn-group-toggle.mx-4(data-toggle='buttons')
-            label.btn.btn-white.active
-              input(type='radio', name='options', autocomplete='off')
-              |  최근 1개월
-            label.btn.btn-white
-              input(type='radio', name='options', autocomplete='off')
-              |  최근 6개월
-            label.btn.btn-white
-              input(type='radio', name='options', autocomplete='off')
-              |  최근 1년
-          .input-group
-            input.form-control(type="text", placeholder='숙소명', style='width: 17rem')
-            .input-group-append
-              button.btn.btn-primary.py-0.px-2(type='button')
-                img(src='/images/search_white.svg', style='margin-top: -.2rem')
+  #content
+    .page-title 숙소 정산
+    .head-filter
+      .form-inline
+        input.form-control.form-control-datepicker(type='text', value='2017.07.16(수)', style='width: 10rem')
+        span.px-2 ~
+        input.form-control.form-control-datepicker(type='text', value='2017.08.20(목)', style='width: 10rem')
+        button.btn.btn-primary.ml-2(type='button') 불러오기
+        .btn-group.btn-group-toggle.mx-4(data-toggle='buttons')
+          label.btn.btn-white.active
+            input(type='radio', name='options', autocomplete='off')
+            |  최근 1개월
+          label.btn.btn-white
+            input(type='radio', name='options', autocomplete='off')
+            |  최근 6개월
+          label.btn.btn-white
+            input(type='radio', name='options', autocomplete='off')
+            |  최근 1년
+        .input-group
+          input.form-control(type="text", placeholder='숙소명', style='width: 17rem')
+          .input-group-append
+            button.btn.btn-primary.py-0.px-2(type='button')
+              img(src='/images/search_white.svg', style='margin-top: -.2rem')
 
-      .form-inline.mb-3
-        select.custom-select.mr-2
-          option 20개씩 보기
-        select.custom-select.mr-2
-          option 공급사
-        select.custom-select.mr-2
-          option 정산상태
-        small.text-muted 16건의 예약목록을 불러왔습니다.
-        button.btn.btn-white.ml-auto(type='button')
-          | 일괄 정산완료
+    .form-inline.mb-3
+      select.custom-select.mr-2
+        option 20개씩 보기
+      select.custom-select.mr-2
+        option 공급사
+      select.custom-select.mr-2
+        option 정산상태
+      small.text-muted 16건의 예약목록을 불러왔습니다.
+      button.btn.btn-white.ml-auto(type='button')
+        | 일괄 정산완료
 
-      table.table.text-center.align-middle
-        thead.bg-light
-          tr
-            th 지급일
-            th 체크인 기간
-            th 공급사
-            th 지역
-            th 숙소명
-            th 총 결제금액
-            th 정산금액
-            th 내역보기
-            th 상태
-        tbody
-          tr
-            td 2018.05.18(금)
-            td
-              | 2018.05.18(금)~
-              br
-              | 2018.05.20(토)
-            td 민박투어
-            td 충남, 태안군
-            td 태안 오투오션펜션
-            td 320,000원
-            td 272,000원
-            td
-              button.btn.btn-white.btn-small(type='button', data-toggle='modal', data-target='#') 상세내역(19건)
-            td
-              select.custom-select.inline
-                option 정산대기
-          tr
-            td 2018.05.18(금)
-            td
-              | 2018.05.18(금)~
-              br
-              | 2018.05.20(토)
-            td 민박투어
-            td 충남, 태안군
-            td 태안 오투오션펜션
-            td 320,000원
-            td 272,000원
-            td
-              button.btn.btn-white.btn-small(type='button', data-toggle='modal', data-target='#') 상세내역(19건)
-            td
-              select.custom-select.inline
-                option 정산대기
-          tr
-            td 2018.05.18(금)
-            td
-              | 2018.05.18(금)~
-              br
-              | 2018.05.20(토)
-            td 민박투어
-            td 충남, 태안군
-            td 태안 오투오션펜션
-            td 320,000원
-            td 272,000원
-            td
-              button.btn.btn-white.btn-small(type='button', data-toggle='modal', data-target='#') 상세내역(19건)
-            td
-              select.custom-select.inline
-                option 정산대기
+    table.table.text-center.align-middle
+      thead.bg-light
+        tr
+          th 지급일
+          th 체크인 기간
+          th 공급사
+          th 지역
+          th 숙소명
+          th 총 결제금액
+          th 정산금액
+          th 내역보기
+          th 상태
+      tbody
+        tr
+          td 2018.05.18(금)
+          td
+            | 2018.05.18(금)~
+            br
+            | 2018.05.20(토)
+          td 민박투어
+          td 충남, 태안군
+          td 태안 오투오션펜션
+          td 320,000원
+          td 272,000원
+          td
+            button.btn.btn-white.btn-small(type='button', data-toggle='modal', data-target='#') 상세내역(19건)
+          td
+            select.custom-select.inline
+              option 정산대기
+        tr
+          td 2018.05.18(금)
+          td
+            | 2018.05.18(금)~
+            br
+            | 2018.05.20(토)
+          td 민박투어
+          td 충남, 태안군
+          td 태안 오투오션펜션
+          td 320,000원
+          td 272,000원
+          td
+            button.btn.btn-white.btn-small(type='button', data-toggle='modal', data-target='#') 상세내역(19건)
+          td
+            select.custom-select.inline
+              option 정산대기
+        tr
+          td 2018.05.18(금)
+          td
+            | 2018.05.18(금)~
+            br
+            | 2018.05.20(토)
+          td 민박투어
+          td 충남, 태안군
+          td 태안 오투오션펜션
+          td 320,000원
+          td 272,000원
+          td
+            button.btn.btn-white.btn-small(type='button', data-toggle='modal', data-target='#') 상세내역(19건)
+          td
+            select.custom-select.inline
+              option 정산대기
 
-      nav.mt-5
-        ul.pagination.justify-content-center
-          li.page-item.disabled
-            .page-link.icon
-              img(src='/images/go-first.svg')
-          li.page-item.disabled
-            .page-link.icon
-              img(src='/images/go-pre.svg')
-          li.page-item.active
-            span.page-link 1
-          li.page-item
-            a.page-link(href='#') 2
-          li.page-item
-            a.page-link(href='#') 3
-          li.page-item
-            a.page-link(href='#') 4
-          li.page-item
-            a.page-link(href='#') 5
-          li.page-item
-            span.page-link.icon
-              img(src='/images/go-next.svg')
-          li.page-item
-            span.page-link.icon
-              img(src='/images/go-last.svg')
+    nav.mt-5
+      ul.pagination.justify-content-center
+        li.page-item.disabled
+          .page-link.icon
+            img(src='/images/go-first.svg')
+        li.page-item.disabled
+          .page-link.icon
+            img(src='/images/go-pre.svg')
+        li.page-item.active
+          span.page-link 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#') 4
+        li.page-item
+          a.page-link(href='#') 5
+        li.page-item
+          span.page-link.icon
+            img(src='/images/go-next.svg')
+        li.page-item
+          span.page-link.icon
+            img(src='/images/go-last.svg')
 
 
-    include ./includes/footer.pug
+  include ./includes/footer.pug
 
 

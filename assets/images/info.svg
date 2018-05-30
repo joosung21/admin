@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>info</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="info" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#C4C4C4" cx="10" cy="10" r="10"></circle>
+        <path d="M8.502,11.654 L8.502,10.576 C8.502,9.61 8.95,9.218 9.846,8.504 C10.406,8.07 10.658,7.748 10.658,7.062 C10.658,6.25 10.14,5.942 9.104,5.942 C8.334,5.942 7.858,6.068 7.312,6.264 L7.312,4.892 C7.956,4.612 8.684,4.472 9.65,4.472 C11.316,4.472 12.618,5.158 12.618,6.894 C12.618,8.112 12.212,8.56 11.218,9.316 C10.462,9.876 10.14,10.1 10.14,10.716 L10.14,11.654 L8.502,11.654 Z M8.404,14.692 L8.404,12.914 L10.294,12.914 L10.294,14.692 L8.404,14.692 Z" id="?" fill="#FFFFFF"></path>
+    </g>
+</svg>

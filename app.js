@@ -9,7 +9,15 @@ app.use('/assets/', express.static('assets'))
 app.use('/images/', express.static('assets/images'))
 app.use('/node_modules/', express.static('node_modules'))
 
-app.get('/', function (req, res){res.redirect('sales')})
+
+
+// Root
+app.get('/', function (req, res){res.redirect('/sales')})
+
+// Login
+app.get('/login', function (req, res){res.render('login')})
+
+//--------------- Tport Admin --------------//
 
 // 판매내역
 app.get('/sales', function (req, res){
@@ -30,6 +38,17 @@ app.get('/payment/seller', function (req, res){
 app.get('/tport/sellers', function (req, res){
   res.render('tport-sellers', {page_name: 'tport-sellers'})
 })
+
+//--------------- GDS Review --------------//
+
+// GDS Root
+app.get('/gds', function (req, res){res.redirect('/gds/property')})
+
+// GDS 업체 정보
+app.get('/gds/property', function (req, res){
+  res.render('gds-property', {page_name: 'property'})
+})
+
 
 // Error Page
 app.get('*', function (req, res){res.render('404')})

@@ -4,9 +4,14 @@
 // Font
 $font-family-sans-serif: 'Spoqa Han Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-// Theme Colors
+// Customize Theme Colors
 $primary: #384C67;
-$light: #F2F3F8;
+$light: #F8F9FB;
+
+// Add Theme color
+$theme-colors: (
+  "onda": #67ABFF
+);
 
 // Component Active
 $component-active-bg:         #4B95FF;
@@ -54,7 +59,8 @@ $pagination-active-color:           #4f4f4f;
 $pagination-active-bg:              #F2F3F8;
 $pagination-active-border-color:    #E5E5E5;
 
-
+// Dropdown
+$dropdown-link-hover-bg:            white;
 
 // Bootstrap and its default variables
 @import "./../node_modules/bootstrap/scss/bootstrap";

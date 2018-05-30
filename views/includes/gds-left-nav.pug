@@ -1,0 +1,9 @@
+#gds-left-nav
+  nav
+    a(href='/gds/property', class=(page_name === 'property' ? 'active' : undefined)) 업체정보
+    a(href='/gds/policy', class=(page_name === 'policy' ? 'active' : undefined)) 실시간 예약 정책
+    a(href='/gds/roomtypes', class=(page_name === 'roomtypes' ? 'active' : undefined)) 객실타입
+    a(href='/gds/calendar', class=(page_name === 'calendar' ? 'active' : undefined)) 요금표 달력
+    a(href='/gds/information', class=(page_name === 'information' ? 'active' : undefined))
+      | 정산정보
+      small.text-red.ml-1 (admin)

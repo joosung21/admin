@@ -1,10 +1,11 @@
 //----------- Variables -----------//
 $primary: #384C67
+$onda: #67ABFF
 $blue: #4B95FF
 $red: #F4516C
 $light: #C4C4C4
 $washed-navy: #7D90A8
-$white-gray: #f1f3f8
+$white-gray: #f2f3f8
 $border-color: #e5e5e5
 
 //------------ Extends -------------//
@@ -13,6 +14,13 @@ $border-color: #e5e5e5
   display: -ms-flexbox // ie10
   display: -webkit-box
   display: flex
+
+%cover-image
+  background: url('/assets/images/no-image.png') no-repeat center center
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
 
 //------------ Initiate ------------//
 html
@@ -90,21 +98,37 @@ a.link
       + .btn-white
         border-left: 1px solid $washed-navy
 
+.btn-onda, .btn-outline-onda:hover
+  color: white
+
 .form-control-datepicker
   background: url('/images/ic-calendar-gray.svg') center right .5rem no-repeat
 
 .custom-select.inline
   width: auto
 
+.custom-select:disabled
+  background-color: #F8F9FB !important
+  color: #929292 !important
+
+.ckeckbox-inline
+  label
+    display: inline-block
+    margin-right: 1.5rem
+
+
 .table
   td
     padding: 1rem .5rem
     &.dimed
       opacity: .4
-  thead th
-    border: 0
-    padding: 1.2rem .5rem
-    font-weight: 600
+  thead
+    &.bg-light
+      background-color: #f2f3f8 !important
+    th
+      border: 0
+      padding: 1.2rem .5rem
+      font-weight: 600
     &.sortable
       cursor: pointer
       &:after
@@ -136,6 +160,10 @@ a.link
       img
         opacity: .4
 
+.tags
+  .btn
+    margin: 0 .5rem .5rem 0
+
 .modal-header .close
   padding: 0 1.5rem
   opacity: 1
@@ -145,15 +173,308 @@ a.link
   .form-group
     margin-bottom: 30px
 
-//------------ Layout --------------//
-#outter-wrapper
+.content-container
+  max-width: 900px
+
+.form-group
+  margin-bottom: 40px
+  > label
+    font-weight: 600
+
+.info
+  color: $onda
+  font-size: .85rem
+  font-weight: 400
+  padding: .5rem 0
+
+.input-group-text
+  color: #929292
+  background-color: #f8f9fb
+
+// Image Upload
+.image-upload
+  margin-bottom: 1rem
+  .unit
+    position: relative
+    padding-bottom: .8rem
+    .img-thumbnail.ratio-4-3
+      width: 100%
+      position: relative
+      background: 50% 50% no-repeat
+      background-size: contain
+      background-clip: content-box
+      &:before
+        display: block
+        content: ""
+        padding-top: 75%
+
+      .reload-container
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+        .reload-box
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          .reload
+            color: #79C732
+            font-size: 2.5rem
+            &.active
+              -webkit-animation: rotate-loading .5s linear 0s infinite normal
+              animation: rotate-loading .5s linear 0s infinite normal
+      img
+        position: absolute
+        max-width: calc(100% - .5rem)
+        max-height: calc(100% - .5rem)
+        top: 50%
+        left: 50%
+        margin-right: -50%
+        transform: translate(-50%, -50%)
+      + button.delete
+        position: absolute
+        right: 0.4rem
+        bottom: 3.7rem
+        display: inline-block
+        width: 40px
+        height: 40px
+        padding: .375rem 0.6rem
+        border: 0
+        background-color: rgba(black, .2)
+        border-radius: 0
+    &.first-image:after
+      content: "대표사진"
+      position: absolute
+      width: 60px
+      height: 28px
+      line-height: 28px
+      left: 5px
+      top: 0
+      color: white
+      background-color: #384C67
+      font-size: 0.8rem
+      text-align: center
+  &.bulk-delete-abled
+    .unit
+      .img-thumbnail
+        opacity: .4
+        &.check-deleted
+          opacity: 1
+          border: 1px solid $red
+
+.image-upload
+  .unit
+    .image
+      position: relative
+      height: 130px
+      border: 1px solid $border-color
+      @extend %cover-image
+    &.first-image
+      .image:before
+        position: absolute
+        left: 0
+        top: 0
+        content: '대표사진'
+        padding: .25rem .5rem
+        background-color: #384C67
+        color: white
+        font-size: .85rem
+    .delete
+      position: absolute
+      right: 0
+      bottom: 0
+      background-color: rgba(black, .2)
+      color: white
+      text-decoration: none
+      padding: .25rem
+      transition: all .3s
+
+// Swal Popup 스타일 수정
+.swal2-container
+  .swal2-actions.swal2-loading
+    margin-top: -2.5em !important
+    .swal2-confirm
+      width: 100px !important
+      height: 100px !important
+      -webkit-animation-duration: .85s !important
+      animation-duration: .85s !important
+      background: red url('/assets/images/Rolling.png') center center no-repeat !important
+      margin: 0 !important
+      border: 0 !important
+
+// Swal Popup 스타일 수정
+.swal2-container
+  .swal2-popup
+    width: auto !important
+    padding: 4rem 5rem !important
+    -webkit-border-radius: 0
+    -moz-border-radius: 0
+    border-radius: 0
+
+    .swal2-progresssteps
+      margin-bottom: 1rem
+      .swal2-progressline
+        background-color: lighten($onda, 15%) !important
+      .swal2-progresscircle
+        background-color: lighten($onda, 15%) !important
+      .swal2-activeprogressstep
+        background-color: $onda !important
+
+    .swal2-icon
+      &.swal2-success
+        border-color: $onda
+        .swal2-success-ring
+          border-color: rgba($onda, .3)
+        [class^=swal2-success-line]
+          background-color: $onda
+
+    .swal2-title
+      margin: 0 0 .6em
+      padding: 0 5rem !important
+      font-size: 1.5rem
+      font-weight: 400
+
+    .swal2-content
+      padding: 0 0 2rem 0
+      white-space: pre
+
+    .swal2-input
+      -webkit-border-radius: 0
+      -moz-border-radius: 0
+      border-radius: 0
+      text-align: center
+      font-weight: 300
+
+    .swal2-buttonswrapper
+      margin-top: 1rem
+
+    .swal2-styled
+      margin: 0 2px 0 2px
+      padding: 8px 30px
+      -webkit-border-radius: 0
+      -moz-border-radius: 0
+      border-radius: 0
+      font-size: 15px
+      &:focus
+        box-shadow: none
+      &.swal2-cancel
+        background-color: #ccc !important
+      &.swal2-confirm
+        background-color: $onda !important
+
+    .swal2-actions
+      button
+        border-radius: 2px
+
+// Custom Checkbox & Radio
+.custom-control
+  margin-left: .25rem
+  .custom-control-label
+    padding-left: 1px
+  .custom-control-input[disabled]
+    + .custom-control-label
+        &:after
+          background-color: #E5E5E5 !important
+  &.custom-checkbox
+    margin-left: .2em
+    .custom-control-label
+      &:before
+        visibility: hidden
+      &:after
+        width: 1.43em
+        height: 1.43em
+        background-color: white
+        border: 1px solid #bbb
+        border-radius: 3px
+        left: -24px
+        top: 1px
+    .custom-control-input:checked
+      + .custom-control-label
+        &:after
+          background: white url('/images/checkbox_check.svg') center center no-repeat
+          border-color: #AAAAAA
+    .custom-control-input:checked[disabled]
+      + .custom-control-label
+        &:after
+          background: #E5E5E5 url('/images/checkbox_check_gray.svg') center center no-repeat
+          border-color: #AAAAAA
+
+  &.custom-radio
+    .custom-control-label
+      &:before
+        visibility: hidden
+      &:after
+        width: 1.45rem
+        height: 1.45rem
+        background-color: white
+        border: 1px solid #bbb
+        border-radius: 1.4rem
+        left: -24px
+        top: 1px
+    .custom-control-input:checked
+      + .custom-control-label
+        &:after
+          background: white url('/images/Oval.svg') center center no-repeat
+          border-color: #AAAAAA
+    .custom-control-input:checked[disabled]
+      + .custom-control-label
+        &:after
+          background: #E5E5E5 url('/images/Oval-gray.svg') center center no-repeat
+          border-color: #AAAAAA
+
+// Checkbox group
+.check-group
+  .custom-checkbox
+    display: inline-block
+    width: 128px
+    margin: .4rem 0 .4rem .2rem
+    font-size: .9rem
+    .custom-control-label
+      padding-top: 1px
+
+//----------- 로그인 ---------------//
+.login
   @extend %display-flex
-  align-items: stretch
+  flex-direction: column
+  justify-content: space-between
+  width: 100vw
+  height: 100vh
+  background: url('/assets/images/login-bg.png') no-repeat center bottom 20%
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  padding-top: calc(50vh - 200px)
+  .title
+    color: white
+    text-align: center
+    font-size: 54px
+    b
+      font-weight: 400
+    span
+      font-weight: 200
+  .login-box
+    background-color: white
+    border-radius: 5px
+    padding: 3rem 7vw
+    margin-top: 1rem
+  .btn-login
+    font-size: 1.4rem
+    padding: .7rem 0
+
+
+
+//------------ ADMIN Layout --------------//
 #inner-wrapper
+  position: relative
+  margin-left: 220px
   width: calc(100% - 220px)
   min-width: 1000px
-
 #left-nav
+  position: fixed
+  top: 0
+  height: 100vh
   flex-shrink: 0
   width: 220px
   background-color: $primary
@@ -179,13 +500,39 @@ a.link
       &.active
         background-color: #53627E
 
+#top-nav
+  position: fixed
+  top: 0
+  width: calc(100% - 220px)
+  min-width: 980px
+  background-color: white
+  @extend %display-flex
+  align-items: center
+  justify-content: flex-end
+  height: 70px
+  border-bottom: 1px solid $border-color
+  padding: 0 40px
+  z-index: 1001
+  a
+    text-decoration: none
+  > a
+    margin-left: 40px
+    padding: 10px 0
+  .dropdown-menu
+    .group-name
+      padding: .25rem 1.5rem
+      font-size: 12px
+      color: $light
+
 #content
+  margin-top: 70px
   padding: 40px 40px 80px 40px
   min-height: calc(100vh - 120px)
   .page-title
     font-size: 18px
     font-weight: 600
     margin-bottom: 30px
+    color: #222222
   .head-filter
     border: 1px solid #929292
     padding: 20px 40px
@@ -202,25 +549,8 @@ footer
   padding: 0 40px
   border-top: 1px solid $border-color
 
-#top-nav
-  @extend %display-flex
-  align-items: center
-  justify-content: flex-end
-  height: 70px
-  border-bottom: 1px solid $border-color
-  padding: 0 40px
-  a
-    text-decoration: none
-  > a
-    margin-left: 40px
-    padding: 10px 0
-  .dropdown-menu
-    .group-name
-      padding: .25rem 1.5rem
-      font-size: 12px
-      color: $light
 
-//------------ Pages --------------//
+//------------ ADMIN Pages --------------//
 
 // Report Summary Table
 #summary-table
@@ -229,10 +559,75 @@ footer
     width: calc(100% / 3)
   .title
     font-size: 18px
+    color: #222222
   .total
     font-size: 28px
     line-height: 28px
     margin: 20px 0
+    color: #222222
     .currency
       font-size: 18px
       margin-left: .25rem
+      color: #4f4f4f
+
+//------------ GDS Layout --------------//
+#gds-inner-wrapper
+  width: calc(100% - 220px)
+  min-width: 1000px
+#gds-top-nav
+  position: fixed
+  top: 0
+  width: 100%
+  min-width: 1200px
+  @extend %display-flex
+  align-items: center
+  height: 70px
+  background-color: $primary
+  padding: 0 40px
+  color: white
+  z-index: 1001
+  a
+    text-decoration: none
+  .title, .brand
+    color: white
+    font-size: 20px
+  .brand
+    font-weight: 300
+    margin-left: 1rem
+  .dropdown-menu
+    .group-name
+      padding: .25rem 1.5rem
+      font-size: 12px
+      color: $light
+
+#gds-left-nav
+  position: fixed
+  top: 0
+  left: 0
+  margin-top: 70px
+  width: 220px
+  height: 100vh
+  background-color: $white-gray
+  nav
+    margin-top: 24px
+    a
+      @extend %display-flex
+      align-items: center
+      padding: 14px 30px
+      transition: background .3s
+      color: #222222
+      &.active
+        background-color: white
+
+#gds-content
+  margin-top: 70px
+  padding: 0 40px 80px 40px
+  min-height: calc(100vh - 120px)
+  .page-title
+    font-size: 18px
+    line-height: 18px
+    font-weight: 600
+    margin: 0 -40px 30px -40px
+    padding: 40px 40px 30px 40px
+    color: #222222
+    border-bottom: 1px solid $border-color
