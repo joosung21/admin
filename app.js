@@ -44,9 +44,14 @@ app.get('/tport/sellers', function (req, res){
 // GDS Root
 app.get('/gds', function (req, res){res.redirect('/gds/property')})
 
-// GDS 업체 정보
+// 업체 정보
 app.get('/gds/property', function (req, res){
   res.render('gds-property', {page_name: 'property'})
+})
+
+// 실시간 예약 정책
+app.get('/gds/policy', function (req, res){
+  res.render('gds-policy', {page_name: 'policy'})
 })
 
 
