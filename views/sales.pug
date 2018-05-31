@@ -67,7 +67,8 @@ include ./includes/left-nav.pug
           th 상태
       tbody
         tr
-          td.text-left.pl-4 11ST-P8O9T88B3
+          td.text-left.pl-4
+            a.text-blue(href='#', data-toggle='modal', data-target='#detailModal') 11ST-P8O9T88B3
           td 11번가
           td 야놀자(판매대행)
           td 충남, 태안군
@@ -87,7 +88,8 @@ include ./includes/left-nav.pug
           td 80,000원
           td 판매완료
         tr
-          td.text-left.pl-4 11ST-P8O9T88B3
+          td.text-left.pl-4
+            a.text-blue(href='#', data-toggle='modal', data-target='#detailModal') 11ST-P8O9T88B3
           td 11번가
           td 야놀자(판매대행)
           td 충남, 태안군
@@ -110,7 +112,8 @@ include ./includes/left-nav.pug
               | 판매취소
               .small (6일전 취소, 100%환불)
         tr
-          td.text-left.pl-4 11ST-P8O9T88B3
+          td.text-left.pl-4
+            a.text-blue(href='#', data-toggle='modal', data-target='#detailModal') 11ST-P8O9T88B3
           td 11번가
           td 야놀자(판매대행)
           td 충남, 태안군
@@ -221,3 +224,227 @@ include ./includes/left-nav.pug
               td
                 | 전송완료
                 .small.text-muted 1111 전달
+
+//- 예약정보 Modal
+#detailModal.modal.modal-full(tabindex='-1')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h5.modal-title 예약정보
+        a.close(data-dismiss='modal')
+          img(src='/images/close.svg')
+      .modal-body
+        .container
+          .mb-4
+          h6.mb-3 기본정보
+          table.table.table-dl
+            tbody
+              tr
+                td.title 예약상태
+                td
+                  | 판매완료
+                  //- .text-blue 입금대기
+                  //- .text-red 예약 취소
+              tr
+                td.title 숙소정보
+                td 무주스케치(전북) 연락처 없음
+              tr
+                td.title 판매일시
+                td 2018-05-30 14:28:01
+              tr
+                td.title 예약자명
+                td 이용훈 010-3817-4375
+
+          .py-4
+
+          h6.mb-3 예약번호
+          table.table.table.table-bordered-list.text-center.align-middle
+            thead.bg-light
+              tr
+                th 판매사-티몬
+                th 티포트
+                th 공급사-가평닷컴(엔인포)
+            tbody
+              tr
+                td 1779854478
+                td
+                  | TM-P9J0IPUA8
+                  .mt-2
+                    //- button.btn.btn-white.btn-small.text-blue(type='button') 예약확정
+                    button.btn.btn-white.btn-small.text-red(type='button', data-toggle='modal', data-target='#cancelModal') 예약취소
+                td
+                  | 1527658080_994676
+                  .mt-2
+                    //- button.btn.btn-white.btn-small.text-blue(type='button') 예약확정 요청
+                    button.btn.btn-white.btn-small.text-red(type='button') 예약취소 요청
+
+          .py-4
+
+          h6.mb-3 상품정보
+          //- 판매완료
+          //- table.table.table.table-bordered-list.text-center.align-middle
+            thead.bg-light
+              tr
+                th 상품명
+                th 이용일
+                th 인원
+                th 결제금액
+            tbody
+              tr
+                td C3
+                td 2018-05-24
+                td 성인 2명, 아동 2명, 유아 0명
+                td 120,000원
+          //- 예약 취소
+          table.table.table.table-bordered-list.text-center.align-middle.mb-0
+            thead.bg-light
+              tr
+                th 상품명
+                th 이용일
+                th 인원
+                th 결제금액
+            tbody
+              tr
+                td
+                  del C3
+                td
+                  del 2018-05-24
+                td
+                  del 성인 2명, 아동 2명, 유아 0명
+                td
+                  del 120,000원
+          table.table.table-dl.border-top-0
+            tbody
+              tr
+                td.title 취소일시
+                td
+                  | 2018-05-30 14:28:01
+                  small.text-red.ml-2 (6일전 취소, 100%환불)
+              tr
+                td.title 취소수수료
+                td 0원
+              tr
+                td.title 환불금액
+                td
+                  | 120,000원
+                  button.btn.btn-white.btn-small.ml-2(type='button', data-toggle='modal', data-target='#refundModal') 변경
+
+          .py-4
+
+          h6.mb-3 상품정보
+          table.table.table.table-bordered-list.align-middle.border-top.mb-4
+            tbody
+              tr
+                td.bg-light.text-center(style='width: 14rem') 결산금액
+                td.pl-4 0원
+
+          .text-right
+            button.btn.btn-white.btn-small(type='button') 메모작성
+          .input-group
+            input.form-control(type='text', value='가나다라마바사')
+            .input-group-append
+              button.btn.btn-onda.btn-small(type='button') 메모저장
+
+          .text-center.my-5
+            button.btn.btn-primary.btn-lg(type='button', data-dismiss='modal') 닫기
+
+
+//- 환불금액 변경 Modal
+#refundModal.modal.modal-on-modal.fade(tabindex='-1')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h5.modal-title 환불금액 변경
+        a.close(data-dismiss='modal')
+          img(src='/images/close.svg')
+      .modal-body
+        .form-group.row
+          label.col-3
+            | 취소수수료 정책
+          .col-9
+            | - 입실 당일
+            span.text-red.mx-1 0%
+            | 환불
+            br
+            | - 입실 1일전
+            span.text-red.mx-1 30%
+            | 환불
+            br
+            | - 입실 2일전
+            span.text-red.mx-1 50%
+            | 환불
+            br
+            | - 입실 3일전
+            span.text-red.mx-1 70%
+            | 환불
+            br
+            | - 입실 4일전
+            span.text-red.mx-1 80%
+            | 환불
+            br
+            | - 입실 5일전
+            span.text-red.mx-1 90%
+            | 환불
+            br
+            | - 입실 6일전
+            span.text-red.mx-1 100%
+            | 환불
+        .form-group.row
+          label.col-3
+            | 환불금액
+          .col-9
+            .form-inline
+              .input-group.mr-2
+                input.form-control.text-right(type='text', value='149,000', style='width: 10rem')
+                .input-group-append
+                  .input-group-text 원
+              .input-group
+                input.form-control.text-right(type='number', value='100', min='0', max='100', style='width: 10rem')
+                .input-group-append
+                  .input-group-text %
+        .text-center.mt-5.mb-3
+          button.btn.btn-onda.btn-lg.px-5(type='button', data-dismiss='modal') 적용
+
+//- 예약취소 Modal
+#cancelModal.modal.modal-on-modal.fade(tabindex='-1')
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        h5.modal-title 예약취소
+        a.close(data-dismiss='modal')
+          img(src='/images/close.svg')
+      .modal-body
+        .form-group.text-center
+          | 티포트 예약만 취소됩니다.
+          br
+          | 판매사와 공급사 예약은 수동으로 관리해 주세요.
+        .form-group.row
+          label.col-3
+            | 숙소명
+          .col-9 거제도 드림여행펜션
+        .form-group.row
+          label.col-3
+            | 객실명
+          .col-9 라일락
+        .form-group.row
+          label.col-3
+            | 예약자명
+          .col-9 김철수
+        .form-group.row
+          label.col-3
+            | 환불 금액
+          .col-9
+            .text-red 250,000원
+            .small
+              span.text-muted *3일전 취소
+              span.text-red.mx-1 40%
+              span.text-muted 환불
+        .form-group.row
+          label.col-3
+            | 메모
+          .col-9
+            textarea.form-control(rows='4')
+
+        .text-center.mt-5.mb-3
+          button.btn.btn-secondary.btn-lg.px-5.mr-1(type='button', data-dismiss='modal') 취소
+          button.btn.btn-onda.btn-lg.px-5(type='button', data-dismiss='modal') 확인

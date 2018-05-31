@@ -76,7 +76,7 @@ a.link
 
 .btn.btn-small
   font-size: .9rem
-  font-weight: 300
+  // font-weight: 300
   padding: .5rem .7rem
 
 .btn.warning-mark
@@ -104,7 +104,7 @@ a.link
       + .btn-white
         border-left: 1px solid $washed-navy
 
-.btn-onda, .btn-outline-onda:hover
+.btn-onda, .btn-outline-onda:hover, .btn-secondary
   color: white
 
 .form-control-datepicker
@@ -121,7 +121,6 @@ a.link
   label
     display: inline-block
     margin-right: 1.5rem
-
 
 .table
   td
@@ -153,6 +152,20 @@ a.link
     td
       opacity: .4
 
+.table-dl
+  border-top: 1px solid #929292
+  td, .btn
+    vertical-align: middle
+  .title
+    width: 10rem
+    padding-left: 2rem
+
+.table-bordered-list
+  td
+    border-right: 1px solid $border-color
+    &:last-child
+      border-right: none
+
 .pagination
   .page-link
     height: 2.7rem
@@ -178,6 +191,15 @@ a.link
 .modal-body
   .form-group
     margin-bottom: 30px
+
+.modal-full
+  .modal-dialog
+    margin: 0
+    width: 100%
+    max-width: none
+
+.modal-on-modal
+  background: rgba(black, .3)
 
 .content-container
   max-width: 900px
