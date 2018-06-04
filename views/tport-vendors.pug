@@ -1,0 +1,134 @@
+include ./includes/header.pug
+include ./includes/left-nav.pug
+#inner-wrapper
+  include ./includes/top-nav.pug
+
+  #content
+    .page-title 공급사 관리
+    .head-filter
+      .form-inline
+        .input-group
+          input.form-control(type="text", placeholder='공급사명', style='width: 17rem')
+          .input-group-append
+            button.btn.btn-primary.py-0.px-2(type='button')
+              img(src='/images/search_white.svg', style='margin-top: -.2rem')
+
+    .form-inline.mb-3
+      select.custom-select.mr-2
+        option 20개씩 보기
+      small.text-muted 54개의 공급사를 불러왔습니다.
+      a.btn.btn-white.ml-auto(href='/tport/vendors/edit')
+        img.mr-1(src='/images/plus.svg')
+        | 공급사 추가
+
+    table.table.text-center.align-middle
+      thead.bg-light
+        tr
+          th.sortable 공급사명
+          th 정산주기
+          th.sortable 계약기간
+          th 특이사항
+      tbody
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') ZARI GDS
+          td 월 1회
+          td 정보 없음
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') PenstionBank
+          td 월 1회
+          td 2018.03.31까지
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') 펜션라이프(11%)
+          td 월 2회
+          td 2017.07.19까지
+          td.text-left 계약완료
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') 일박이일
+          td 월 2회
+          td 2017.12.31까지
+          td.text-left 계약완료 (코드, 도메인 강제 매핑해야됨)
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') G펜션
+          td 주 1회
+          td 2018.03.29까지
+          td.text-left 계약완료 (티몬 월정산, 티몬제외 주정산)
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') SM컴퍼니(티몬)
+          td 월 2회
+          td 2017.12.31까지
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') ZARI GDS
+          td 월 1회
+          td 정보 없음
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') PenstionBank
+          td 월 1회
+          td 2018.03.31까지
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') 펜션라이프(11%)
+          td 월 2회
+          td 2017.07.19까지
+          td.text-left 계약완료
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') 일박이일
+          td 월 2회
+          td 2017.12.31까지
+          td.text-left 계약완료 (코드, 도메인 강제 매핑해야됨)
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') G펜션
+          td 주 1회
+          td 2018.03.29까지
+          td.text-left 계약완료 (티몬 월정산, 티몬제외 주정산)
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/vendors/edit') SM컴퍼니(티몬)
+          td 월 2회
+          td 2017.12.31까지
+          td.text-left
+
+    nav.mt-5
+      ul.pagination.justify-content-center
+        li.page-item.disabled
+          .page-link.icon
+            img(src='/images/go-first.svg')
+        li.page-item.disabled
+          .page-link.icon
+            img(src='/images/go-pre.svg')
+        li.page-item.active
+          span.page-link 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#') 4
+        li.page-item
+          a.page-link(href='#') 5
+        li.page-item
+          span.page-link.icon
+            img(src='/images/go-next.svg')
+        li.page-item
+          span.page-link.icon
+            img(src='/images/go-last.svg')
+
+
+  include ./includes/footer.pug
+
+
+

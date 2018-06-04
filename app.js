@@ -34,6 +34,16 @@ app.get('/payment/seller', function (req, res){
   res.render('payment-seller', {page_name: 'payment-seller'})
 })
 
+// 공급사 관리
+app.get('/tport/vendors', function (req, res){
+  res.render('tport-vendors', {page_name: 'tport-vendors'})
+})
+
+// 공급사 추가/수정
+app.get('/tport/vendors/edit', function (req, res){
+  res.render('tport-vendors-edit', {page_name: 'tport-vendors'})
+})
+
 // 숙소관리
 app.get('/tport/sellers', function (req, res){
   res.render('tport-sellers', {page_name: 'tport-sellers'})
