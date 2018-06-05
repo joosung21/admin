@@ -1,0 +1,128 @@
+include ./includes/header.pug
+include ./includes/left-nav.pug
+#inner-wrapper
+  include ./includes/top-nav.pug
+
+  #content
+    .content-container
+      .page-title 판매사 관리
+      .lead.text-muted 필수정보
+      hr.mb-5
+      .form-group.row
+        label.label-necessary.col-2.pt-1 판매사명
+        .col-10
+          input.form-control(type='text', value='NAVER')
+      .form-group.row
+        label.label-necessary.col-2.pt-1 판매사 코드명
+        .col-10
+          input.form-control(type='text', value='네이버', disabled)
+      .form-group.row
+        label.label-necessary.col-2.pt-1 판매사 도메인
+        .col-10
+          input.form-control(type='text', value='naver.com', disabled)
+      .form-group.row
+        label.label-necessary.col-2.pt-1 판매사 Prefix
+        .col-10
+          input.form-control(type='text', value='NV', disabled)
+      .form-group.row
+        label.label-necessary.col-2.pt-1 연동방식
+        .col-10
+          label.custom-control.custom-radio.custom-control-inline.mr-4
+            input.custom-control-input(type='radio', name='radio1', checked)
+            span.custom-control-label API
+          label.custom-control.custom-radio.custom-control-inline.mr-4
+            input.custom-control-input(type='radio', name='radio1')
+            span.custom-control-label 파트너 페이지
+      .form-group.row
+        label.label-necessary.col-2.pt-1 판매수수료
+        .col-10
+          .form-inline
+            .input-group
+              input.form-control(type='text', value='3.6')
+              .input-group-append
+                .input-group-text %
+            span.text-red.ml-3 * 소수점 두자리(0.00%)까지 입력 가능합니다.
+      .form-group.row
+        label.label-necessary.col-2.pt-1 취소수수료
+        .col-10
+          .input-group
+            input.form-control(type='text')
+            .input-group-append
+              .input-group-text %
+      .form-group.row
+        label.label-necessary.col-2.pt-1 계약기간
+        .col-10
+          .form-inline
+            input.form-control.form-control-datepicker(type='text', value='2018.06.01', style='width: 10rem')
+            span.px-2 ~
+            input.form-control.form-control-datepicker(type='text', value='2019.05.31', style='width: 10rem')
+      .form-group.row
+        label.col-2.pt-1 연동상태
+        .col-10
+          label.custom-control.custom-radio.custom-control-inline.mr-4
+            input.custom-control-input(type='radio', name='radio2', checked)
+            span.custom-control-label 연동중
+          label.custom-control.custom-radio.custom-control-inline.mr-4
+            input.custom-control-input(type='radio', name='radio2')
+            span.custom-control-label 준비중
+          label.custom-control.custom-radio.custom-control-inline.mr-4
+            input.custom-control-input(type='radio', name='radio2')
+            span.custom-control-label 계약종료
+      .form-group.row
+        label.col-2.pt-1 특이사항
+        .col-10
+          input.form-control(type='text', value='PG수수료 별도 (네이버페이-결제수단별 다름)')
+      .form-group.row
+        label.col-2.pt-1 API 인증키
+        .col-10
+          .input-group.mb-2
+            .input-group-prepend
+              .input-group-text.text-blue 227일 남음
+            input.form-control(type='text', value='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfa2V5IjoiNmUwOWQ0Y2YxMjQ3NzI2MWIxNGExMWY2NGNkYTcyODc2YTk5YzYxYWNlNmFiNWZhMTczYTQwOGJiM2NjODc0YiIsInRpbWVzdGFtcCI6MTUxNjE3OTQ5NjQxMywic2VydmljZV9pZCI6MSwidGFyZ2V0IjoidmVuZG9yIiwidGFyZ2V0X2lkIjo4LCJpYXQiOjE1MTYxNzk0OTYsImV4cCI6MTU0NzcxNTQ5Nn0.AFPtw1BlpEht2OdP_b4xiIKUCmjpmfMMRoFF5Ok9JSI', readonly)
+            .input-group-append
+              button.btn.btn-white.btn-small(type='button') 복사
+          button.btn.btn-onda.btn-small(type='button') 인증키 발급하기
+
+      .py-4
+
+      .lead.text-muted 제휴사 담당자 정보
+      hr.mb-5
+
+      .form-group.row
+        label.label-necessary.col-2.pt-1 이름/직급
+        .col-10
+          input.form-control(type='text', value='김형곤')
+      .form-group.row
+        label.label-necessary.col-2.pt-1 연락처
+        .col-10
+          input.form-control(type='text', value='010-9081-9733')
+      .form-group.row
+        label.label-necessary.col-2.pt-1 이메일
+        .col-10
+          input.form-control(type='email', value='khg2020@naver.com')
+      .form-group.row
+        label.col-2.pt-1 계약서
+        .col-10
+          .input-group
+            .custom-file
+              input#inputGroupFile02.custom-file-input(type='file')
+              label.custom-file-label(for='inputGroupFile02') 파일 올리기
+      .form-group.row
+        label.col-2.pt-1 사업자등록증
+        .col-10
+          .input-group
+            .custom-file
+              input#inputGroupFile03.custom-file-input(type='file')
+              label.custom-file-label(for='inputGroupFile03') 파일 올리기
+      .form-group.row
+        label.col-2.pt-1 메모
+        .col-10
+          textarea.form-control(rows='5')
+
+      .text-center.mt-5
+        a.btn.btn-lg.btn-secondary.px-5.mr-1(href='/tport/channels') 취소
+        a.btn.btn-lg.btn-onda.px-5(href='/tport/channels') 저장
+
+
+
+  include ./includes/footer.pug

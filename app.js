@@ -44,6 +44,16 @@ app.get('/tport/vendors/edit', function (req, res){
   res.render('tport-vendors-edit', {page_name: 'tport-vendors'})
 })
 
+// 판매사 관리
+app.get('/tport/channels', function (req, res){
+  res.render('tport-channels', {page_name: 'tport-channels'})
+})
+
+// 판매사 추가/수정
+app.get('/tport/channels/edit', function (req, res){
+  res.render('tport-channels-edit', {page_name: 'tport-channels'})
+})
+
 // 숙소관리
 app.get('/tport/sellers', function (req, res){
   res.render('tport-sellers', {page_name: 'tport-sellers'})

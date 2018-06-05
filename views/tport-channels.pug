@@ -1,0 +1,160 @@
+include ./includes/header.pug
+include ./includes/left-nav.pug
+#inner-wrapper
+  include ./includes/top-nav.pug
+
+  #content
+    .page-title 판매사 관리
+    .head-filter
+      .form-inline
+        .input-group
+          input.form-control(type="text", placeholder='공급사명', style='width: 17rem')
+          .input-group-append
+            button.btn.btn-primary.py-0.px-2(type='button')
+              img(src='/images/search_white.svg', style='margin-top: -.2rem')
+
+    .form-inline.mb-3
+      select.custom-select.mr-2
+        option 20개씩 보기
+      small.text-muted 54개의 공급사를 불러왔습니다.
+      a.btn.btn-white.ml-auto(href='/tport/channels/edit')
+        img.mr-1(src='/images/plus.svg')
+        | 판매사 추가
+
+    table.table.text-center.align-middle
+      thead.bg-light
+        tr
+          th.sortable 판매사명
+          th 연동방식
+          th 판매수수료
+          th 취소수수료
+          th 계약기간
+          th 특이사항
+      tbody
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') GDS
+          td API
+          td 3.60%
+          td 15.00%
+          td 2027.03.03
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') NAVER
+          td API
+          td 3.60%
+          td 10.00%
+          td 2017.10.31까지
+          td.text-left PG수수료 별도 (네이버페이-결제수단별 다름)
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') 티몬
+          td API
+          td 3.00%
+          td 10.00%
+          td 2018.04.30까지
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') 올스테이
+          td 파트너 페이지
+          td 7.70%
+          td 7.70%
+          td 2018.03.09까지
+          td.text-left 계약완료
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') PENSIONBANK(판매안함)
+          td API
+          td 3.00%
+          td 10.00%
+          td 2018.04.18까지
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') 웨어고
+          td 파트너페이지
+          td 3.00%
+          td 3.00%
+          td 2018.04.18까지
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') GDS
+          td API
+          td 3.60%
+          td 15.00%
+          td 2027.03.03
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') 네이버
+          td API
+          td 3.60%
+          td 10.00%
+          td 2017.10.31까지
+          td.text-left PG수수료 별도 (네이버페이-결제수단별 다름)
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') 티몬
+          td API
+          td 3.00%
+          td 10.00%
+          td 2018.04.30까지
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') 올스테이
+          td 파트너 페이지
+          td 7.70%
+          td 7.70%
+          td 2018.03.09까지
+          td.text-left 계약완료
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') PENSIONBANK(판매안함)
+          td API
+          td 3.00%
+          td 10.00%
+          td 2018.04.18까지
+          td.text-left
+        tr
+          td.text-left.pl-4
+            a.text-blue(href='/tport/channels/edit') 웨어고
+          td 파트너페이지
+          td 3.00%
+          td 3.00%
+          td 2018.04.18까지
+          td.text-left
+
+    nav.mt-5
+      ul.pagination.justify-content-center
+        li.page-item.disabled
+          .page-link.icon
+            img(src='/images/go-first.svg')
+        li.page-item.disabled
+          .page-link.icon
+            img(src='/images/go-pre.svg')
+        li.page-item.active
+          span.page-link 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#') 4
+        li.page-item
+          a.page-link(href='#') 5
+        li.page-item
+          span.page-link.icon
+            img(src='/images/go-next.svg')
+        li.page-item
+          span.page-link.icon
+            img(src='/images/go-last.svg')
+
+
+  include ./includes/footer.pug
+
+
+
