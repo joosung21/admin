@@ -1,0 +1,156 @@
+include ./includes/header.pug
+include ./includes/left-nav.pug
+#inner-wrapper
+  include ./includes/top-nav.pug
+
+  #content
+    .page-title 계정 관리
+    .head-filter
+      .form-inline
+        .input-group
+          input.form-control(type="text", placeholder='이름/이메일/연락처', style='width: 17rem')
+          .input-group-append
+            button.btn.btn-primary.py-0.px-2(type='button')
+              img(src='/images/search_white.svg', style='margin-top: -.2rem')
+
+    .form-inline.mb-3
+      select.custom-select.mr-2
+        option 10개씩 보기
+        option 15개씩 보기
+        option(selected) 20개씩 보기
+        option 30개씩 보기
+        option 전체
+      select.custom-select.mr-2
+        option 판매사
+      select.custom-select.mr-2
+        option 공급사
+      label.custom-control.custom-checkbox
+        input.custom-control-input(type='checkbox', checked)
+        span.custom-control-label 관리자
+      small.text-muted.ml-4 141개의 계정을 불러왔습니다.
+      button.btn.btn-white.ml-auto(type='button', data-toggle='modal', data-target='#userModal')
+        img.mr-1(src='/images/plus.svg')
+        | 게정 추가
+
+    table.table.text-center.align-middle
+      thead.bg-light
+        tr
+          th 소속
+          th 이름
+          th 이메일
+          th 연락처
+          th 상태
+          th 관리
+      tbody
+        tr
+          td 티포트 어드민
+          td 에일린
+          td aileen.baek@tport.io
+          td 01000000000
+          td 사용 가능
+          td
+            button.btn.btn-white.btn-small.mr-1(type='button', data-toggle='modal', data-target='#userModal') 수정
+            button.btn.btn-white.btn-small(type='button') 삭제
+        tr
+          td 알라딘여행
+          td 윤영진
+          td aladdintravel@naver.com
+          td 01074712848
+          td 사용 가능
+          td
+            button.btn.btn-white.btn-small.mr-1(type='button', data-toggle='modal', data-target='#userModal') 수정
+            button.btn.btn-white.btn-small(type='button') 삭제
+        tr
+          td 권한없음
+          td 올스테이
+          td allstay@tport.io
+          td 00000000000
+          td 패스워드 재설정 팰요
+          td
+            button.btn.btn-white.btn-small.mr-1(type='button', data-toggle='modal', data-target='#userModal') 수정
+            button.btn.btn-white.btn-small(type='button') 삭제
+        tr
+          td 티포트 어드민
+          td 여아름
+          td amina.yeo@onda.me
+          td 01031737494
+          td 사용 가능
+          td
+            button.btn.btn-white.btn-small.mr-1(type='button', data-toggle='modal', data-target='#userModal') 수정
+            button.btn.btn-white.btn-small(type='button') 삭제
+        tr
+          td
+            | 티몬 호텔
+            br
+            | 티몬 펜션
+          td 조명정
+          td audwjd0515@tmon.co.kr
+          td 01000000000
+          td 사용 가능
+          td
+            button.btn.btn-white.btn-small.mr-1(type='button', data-toggle='modal', data-target='#userModal') 수정
+            button.btn.btn-white.btn-small(type='button') 삭제
+
+    nav.mt-5
+      ul.pagination.justify-content-center
+        li.page-item.disabled
+          .page-link.icon
+            img(src='/images/go-first.svg')
+        li.page-item.disabled
+          .page-link.icon
+            img(src='/images/go-pre.svg')
+        li.page-item.active
+          span.page-link 1
+        li.page-item
+          a.page-link(href='#') 2
+        li.page-item
+          a.page-link(href='#') 3
+        li.page-item
+          a.page-link(href='#') 4
+        li.page-item
+          a.page-link(href='#') 5
+        li.page-item
+          span.page-link.icon
+            img(src='/images/go-next.svg')
+        li.page-item
+          span.page-link.icon
+            img(src='/images/go-last.svg')
+
+
+  include ./includes/footer.pug
+
+
+//- 계정 추가/수정 Modal
+#userModal.modal.fade(tabindex='-1')
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        h5.modal-title 계정 관리
+        a.close(data-dismiss='modal')
+          img(src='/images/close.svg')
+      .modal-body
+        .form-group.form-row
+          label.label-necessary.col-2.pt-1 소속
+          .col-10
+            select.custom-select
+              option 선택해 주세요.
+        .form-group.form-row
+          label.label-necessary.col-2.pt-1 이름
+          .col-10
+            input.form-control(type='text', value='안주성', placeholder='홍길동')
+        .form-group.form-row
+          label.label-necessary.col-2.pt-1 연락처
+          .col-10
+            input.form-control(type='text', placeholder="'-' 제외 숫자만 입력")
+        .form-group.form-row
+          label.label-necessary.col-2.pt-1 이메일
+          .col-10
+            input.form-control(type='text', value='jay.ahn@tport.io')
+        .form-group.form-row
+          label.label-necessary.col-2.pt-1 비밀번호
+          .col-10
+            input.form-control(type='password', value='7887788')
+        .text-center.mt-5
+          button.btn.btn-lg.btn-secondary.px-5.mr-1(type='button', data-dismiss='modal') 취소
+          button.btn.btn-lg.btn-onda.px-5(type='button', data-dismiss='modal') 저장
+

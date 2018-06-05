@@ -37,13 +37,22 @@ include ./includes/left-nav.pug
     .form-inline.mb-3
       select.custom-select.mr-2
         option 20개씩 보기
+        option 50개씩 보기
+        option 100개씩 보기
       select.custom-select.mr-2
         option 판매사
       select.custom-select.mr-2
         option 공급사
       select.custom-select.mr-2
-        option 판매 완료 및 취소
-      small.text-muted 16건의 예약목록을 불러왔습니다.
+        option 전체선택
+        option 판매사 판매 진행중
+        option 공급사 판매 진행중
+        option 판매완료
+        option 판매 취소중
+        option 가예약중 취소
+        option 판매 취소
+        option(selected) 판매 완료 및 취소
+      small.text-muted 16건의 판매목록을 불러왔습니다.
       button.btn.btn-white.ml-auto(type='button')
         img.mr-1(src='/images/refresh.svg')
         | 쿠폰정보 새로고침

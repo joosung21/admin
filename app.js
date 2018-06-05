@@ -29,7 +29,12 @@ app.get('/report', function (req, res){
   res.render('report', {page_name: 'report'})
 })
 
-// 숙소정산
+// 공급사 정산
+app.get('/payment/vendor', function (req, res){
+  res.render('payment-vendor', {page_name: 'payment-vendor'})
+})
+
+// 숙소 정산
 app.get('/payment/seller', function (req, res){
   res.render('payment-seller', {page_name: 'payment-seller'})
 })
@@ -58,6 +63,14 @@ app.get('/tport/channels/edit', function (req, res){
 app.get('/tport/sellers', function (req, res){
   res.render('tport-sellers', {page_name: 'tport-sellers'})
 })
+
+// 계정관리
+app.get('/tport/users', function (req, res){
+  res.render('tport-users', {page_name: 'tport-users'})
+})
+
+
+
 
 //--------------- GDS Review --------------//
 
