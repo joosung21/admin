@@ -57,35 +57,44 @@ include ./includes/left-nav.pug
           th.sortable 번호
           th.sortable 분류
           th.sortable 지역
-          th.sortable 숙소명
+          th.sortable.text-left 숙소명
+          th
           th 공급사
           th.sortable 상태
           th.sortable 최종 수정일
       tbody
         tr
-          td 3678
+          td 4266
           td 펜션
-          td 지역없음
-          td 이름없음
-          td StayWith
-          td 판매 (검수대기)
+          td 강원 양양군
+          td.text-left 38마린리조트
+          td.text-right
+            a.btn.btn-onda.btn-small.mr-1(href='#', target='_blank') PPMS
+            a.btn.btn-secondary.btn-small(href='/gds', target='_blank') GDS
+          td henry펜션
+          td 판매(검수대기)
           td 2018-05-18
         tr
-          td 3678
-          td 펜션
-          td 지역없음
-          td 이름없음
-          td StayWith
-          td 판매 (검수대기)
-          td 2018-05-18
+          td 19844
+          td 호텔
+          td 충남, 천안시
+          td.text-left 2월호텔수성점
+          td.text-right
+            a.btn.btn-onda.btn-small.mr-1(href='#', target='_blank') XTRA
+            a.btn.btn-secondary.btn-small(href='/gds', target='_blank') GDS
+          td 티몬호텔
+          td 판매(검수완료)
+          td 2018-05-29
         tr
-          td 3678
+          td 2019
           td 펜션
-          td 지역없음
-          td 이름없음
-          td StayWith
-          td 판매 (검수대기)
-          td 2018-05-18
+          td 제주, 서귀포시
+          td.text-left 3657펜션
+          td.text-right
+            a.btn.btn-secondary.btn-small(href='/gds', target='_blank') GDS
+          td 펜션라이프(11%)
+          td 판매(검수완료)
+          td 2018-05-29
     nav.mt-5
       ul.pagination.justify-content-center
         li.page-item.disabled
