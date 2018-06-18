@@ -3,177 +3,293 @@ include ./includes/gds-top-nav.pug
 include ./includes/gds-left-nav.pug
 
 #inner-wrapper
-  #gds-content
+  #gds-content.review
     .page-title 업체정보
-    .content-container
-      .form-group.row
-        label.label-necessary.col-2.pt-1 업체명
-        .col-10
-          input.form-control(type='text', value='테스트테스트')
-      .form-group.row
-        label.label-necessary.col-2 업체종류
-        .col-10
-          label.custom-control.custom-radio.custom-control-inline.mr-4
-            input.custom-control-input(type='radio', name='radio1', checked)
-            span.custom-control-label 호텔
-          label.custom-control.custom-radio.custom-control-inline
-            input.custom-control-input(type='radio', name='radio1')
-            span.custom-control-label 개인
-          label.custom-control.custom-radio.custom-control-inline
-            input.custom-control-input(type='radio', name='radio1')
-            span.custom-control-label 게스트하우스
-          label.custom-control.custom-radio.custom-control-inline
-            input.custom-control-input(type='radio', name='radio1')
-            span.custom-control-label 모텔
-          label.custom-control.custom-radio.custom-control-inline
-            input.custom-control-input(type='radio', name='radio1')
-            span.custom-control-label 카라반
-          label.custom-control.custom-radio.custom-control-inline
-            input.custom-control-input(type='radio', name='radio1')
-            span.custom-control-label 글램핑
-          label.custom-control.custom-radio.custom-control-inline
-            input.custom-control-input(type='radio', name='radio1')
-            span.custom-control-label 캠핑
-          label.custom-control.custom-radio.custom-control-inline
-            input.custom-control-input(type='radio', name='radio1')
-            span.custom-control-label 리조트
-          label.custom-control.custom-radio.custom-control-inline
-            input.custom-control-input(type='radio', name='radio1')
-            span.custom-control-label 한옥
-          label.custom-control.custom-radio.custom-control-inline
-            input.custom-control-input(type='radio', name='radio1')
-            span.custom-control-label 풀빌라
-          label.custom-control.custom-radio.custom-control-inline
-            input.custom-control-input(type='radio', name='radio1')
-            span.custom-control-label 레지던스
-      .form-group.row
-        label.label-necessary.col-2 업체소개
-        .col-10
-          textarea.form-control(rows='15').
-            [시설개요]
-            바베큐장 / 수영장
-            노래방, 유명 브랜드의 편의점, 최신식 노래방, 세미나실, 현대식 실내외 바비큐장 및 야외 수영장 등 각종 편의시설들은 어느 펜션리조트에
-            비해 뒤지지 않으며 편리하고 안락함을 제공합니다.
+    .head-filter.p-3
+      .d-flex
+        button.btn.btn-onda.ml-2(type='button') 저장
+        span.info.ml-2 2개의 항목이 수정되었습니다.
+        .form-inline.ml-auto
+          button.btn.btn-white.ml-2(type='button') 콘텐츠 동기화
+          button.btn.btn-white.ml-2(type='button') 이미지 동기화
+          button.btn.btn-white.ml-2(type='button') 판매사 동기화
+    .alert.alert-onda.mb-5 1개의 항목이 검토를 필요로 합니다.
+    .row.mb-5
+      .col
+        h1 GDS
+      .col
+        h1 VENDOR
+    .form-group
+      label.label-necessary 업체명
+      .row.no-gutters.border
+        .col
+          .px-4.py-2
+            input.form-control-plaintext(type='text', value='낙조테마')
+        .col.bg-light
+          .px-4.py-2
+            input.form-control-plaintext.text-muted(type='text', value='낙조테마', readonly)
+    .form-group
+      label.label-necessary 업체종류
+      .row.no-gutters.border
+        .col
+          .p-4
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1', checked)
+              span.custom-control-label 펜션
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 호텔
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 개인
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 게스트하우스
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 모텔
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 카라반
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 글램핑
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 캠핑
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 리조트
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 한옥
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 풀빌라
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 레지던스
+        .col.bg-light
 
-            [시설정보]
-            ㅁ 바베큐장 이용안내
-            - 실내외 셀프바비큐장
-            - 제공품목 : 숯,그릴,가위,집게,접시,컵
-            - 이용요금 : 2만원(소), 3만원(대)
-            ㅁ 제트스파
-            ㅁ 카페
-            ㅁ 편의점
-      .form-group.row
-        label.col-2 예약정보
-        .col-10
-          textarea.form-control(rows='15').
-            [추가요금]
-            ㅁ 성인 1인당 20,000원 / 아동 1인당 10,000원
+    .form-group
+      label.label-necessary 업체소개
+      .row.no-gutters.border
+        .col
+          .wrap
+            textarea.form-control-plaintext.
+              [시설정보]
+              -바다 도보 10분
+              -갯벌체험, 족구장, 세미나실, 바비큐파티, 수영장
 
-            [예약안내]
-            ㅁ 펜션연락처는 예약과 동시에 고객님의 휴대폰으로 자동발송됩니다.
-            ㅁ 예약 전 취소수수료를 꼭 확인바랍니다.
+              [기준인원 추가비용]
+              - 기준인원 초과시 1인 10,000원의 비용이 발생됩니다.(영유아 포함)
+              - 최대인원 초과시 입실 및 환불이 불가합니다.
 
-            [이용시 주의사항]
-            ㅁ 보호자를 동반하지 않은 미성년자는 어떠한 경우에도 입실하실 수 없습니다.
-            ㅁ 객실 정리가 끝나시면 펜션지기에게 연락하시어 퇴실 점검을 받으시기 바랍니다.
-            ㅁ 객실 내에서는 금연입니다.
-            ㅁ 애완동물은 부득이 타 객실 및 손님을 위해 입실을 금하오니 양해 바랍니다.
-            ㅁ 바비큐는 화재 및 냄새로 인한 타 손님의 배려 차원에서 지정된 장소에서만 이용 가능합니다.
-      .form-group.row
-        label.col-2
-          | 공지
-          img.ml-2(src='/images/info.svg', data-toggle='tooltip', title='프로모션 등의 예약공지 정보를 입력해 주세요.')
-        .col-10
-          textarea.form-control(rows='7')
-      .form-group.row
-        label.col-2 체크인/체크아웃
-        .col-10
-          .form-row
-            .col-6
-              .input-group
-                .input-group-prepend
-                  .input-group-text(style='width:8rem') 체크인 시작
-                input.form-control(type='time')
-            .col-6
-              .input-group
-                .input-group-prepend
-                  .input-group-text(style='width:8rem') 체크인 마감
-                input.form-control(type='time')
-          .form-row.mt-2
-            .col-6
-              .input-group
-                .input-group-prepend
-                  .input-group-text(style='width:8rem') 체크아웃 마감
-                input.form-control(type='time')
-      .form-group.row.mb-3
-        label.label-necessary.col-2.pt-1 사진
-        .col-10
-          .image-upload.form-row.mt-2
-            .unit.grabbable.col-3.first-image(draggable='true')
-              .image(style='background-image: url("/assets/images/temp-image.jpg")')
-                a.delete(href='#')
-                  i.fa.fa-trash.fa-lg
-              input.form-control.mt-2(type='text', placeholder='사진설명')
-            .unit.grabbable.col-3(draggable='true')
-              .image(style='background-image: url("/assets/images/temp-image.jpg")')
-                a.delete(href='#')
-                  i.fa.fa-trash.fa-lg
-              input.form-control.mt-2(type='text', placeholder='사진설명')
-            .unit.grabbable.col-3(draggable='true')
-              .image(style='background-image: url("/assets/images/temp-image.jpg")')
-                a.delete(href='#')
-                  i.fa.fa-trash.fa-lg
-              input.form-control.mt-2(type='text', placeholder='사진설명')
-            .unit.grabbable.col-3(draggable='true')
-              .image(style='background-image: url("/assets/images/temp-image.jpg")')
-                a.delete(href='#')
-                  i.fa.fa-trash.fa-lg
-              input.form-control.mt-2(type='text', placeholder='사진설명')
-            .unit.grabbable.col-3(draggable='true')
-              .image(style='background-image: url("/assets/images/temp-image.jpg")')
-                a.delete(href='#')
-                  i.fa.fa-trash.fa-lg
-              input.form-control.mt-2(type='text', placeholder='사진설명')
-            .unit.grabbable.col-3(draggable='true')
-              .image(style='background-image: url("/assets/images/temp-image.jpg")')
-                a.delete(href='#')
-                  i.fa.fa-trash.fa-lg
-              input.form-control.mt-2(type='text', placeholder='사진설명')
-            .unit.grabbable.col-3(draggable='true')
-              .image(style='background-image: url("/assets/images/temp-image.jpg")')
-                a.delete(href='#')
-                  i.fa.fa-trash.fa-lg
-              input.form-control.mt-2(type='text', placeholder='사진설명')
-            .unit.grabbable.col-3(draggable='true')
-              .image(style='background-image: url("/assets/images/temp-image.jpg")')
-                a.delete(href='#')
-                  i.fa.fa-trash.fa-lg
-              input.form-control.mt-2(type='text', placeholder='사진설명')
+              [숯,그릴 비용안내]
+              - 바비큐는 지정된 장소에 이용하셔야 하며, 숯불그릴 이용시 2인 15,000원의 비용이 발생됩니다.
+                (3~4인 2만원, 5~6인 3만원, 7~8인 4만원, 9~10인 5만원 비용발생-국내산 백탄숯만 사용)
 
-          //- 기본
-          .d-flex.mb-4
-            button.btn.btn-white.btn-small.mr-3(type='button')
-              img(src='/assets/images/ic-camera.svg', style='position:relative; top:-2px; margin-right: 5px')
-              span 이미지 추가
-            button.btn.btn-white.btn-small(type='button') 수정
+              [주의사항]
+              - 객실정리가 끝나시면 관리자에게 연락하시어 퇴실점검을 받으시기 바랍니다.
+              - 오후 10시 이후의 입실은 사전에 반드시 연락을 주시기 바랍니다.
+              - 야간엔 큰 소음을 방지하기위해 밤11시 30분엔 외부 조명을 소등하오니 양해 부탁드립니다.
+                (타손님들 주민들을 고려해 무분별한 음주나 고성방가를 삼가하여 주십시오.)
+              - 미성년자는 보호자 동반없이 이용 할 수 없습니다.
+              - 집기 파손시에는 펜션지기에게 알려주시기 바랍니다.
+              - 화투등의 도박은 금지하므로 양해바랍니다.
+              - 애완동물은 부득이 타 객실 및 손님을 위해 입실을 금지하오니 양해바랍니다.
+              - 쓰레기는 음식물 쓰레기와 일반 쓰레기로 분리만 해 두시면 됩니다.
+              - 객실 내에서는 절대 금연이오니 객실 앞 개별테크 및 야외를 이용하시기 바랍니다.
+        .col.bg-light
+          .wrap
+            textarea.form-control-plaintext.text-muted(readonly).
+              [시설정보]
+              -바다 도보 10분
+              -갯벌체험, 족구장, 세미나실, 바비큐파티, 수영장
 
-          //- 수정 중
-          //- .d-flex.mb-4
-            button.btn.btn-white.btn-small.mr-3(type='button')
-              img(src='/assets/images/ic-camera.svg', style='position:relative; top:-2px; margin-right: 5px')
-              span 이미지 추가
-            button.btn.btn-secondary.btn-small.mr-1(type='button') 취소
-            button.btn.btn-onda.btn-small(type='button') 저장
-            .info.ml-2 사진순서는 드래그로 변경 가능하며, 1번 사진이 대표 사진으로 설정됩니다.
-            button.btn.btn-white.btn-small.ml-auto(type='button')
-              i.fa.fa-trash.fa-lg.mr-1
-              span 전체삭제
+              [기준인원 추가비용]
+              - 기준인원 초과시 1인 10,000원의 비용이 발생됩니다.(영유아 포함)
+              - 최대인원 초과시 입실 및 환불이 불가합니다.
 
-      .form-group.row
-        label.label-necessary.col-2.pt-1 숙소특성
-        .col-10
-          .bg-light.px-4.py-3.rounded
+              [숯,그릴 비용안내]
+              - 바비큐는 지정된 장소에 이용하셔야 하며, 숯불그릴 이용시 2인 15,000원의 비용이 발생됩니다.
+                (3~4인 2만원, 5~6인 3만원, 7~8인 4만원, 9~10인 5만원 비용발생-국내산 백탄숯만 사용)
+
+              [주의사항]
+              - 객실정리가 끝나시면 관리자에게 연락하시어 퇴실점검을 받으시기 바랍니다.
+              - 오후 10시 이후의 입실은 사전에 반드시 연락을 주시기 바랍니다.
+              - 야간엔 큰 소음을 방지하기위해 밤11시 30분엔 외부 조명을 소등하오니 양해 부탁드립니다.
+                (타손님들 주민들을 고려해 무분별한 음주나 고성방가를 삼가하여 주십시오.)
+              - 미성년자는 보호자 동반없이 이용 할 수 없습니다.
+              - 집기 파손시에는 펜션지기에게 알려주시기 바랍니다.
+              - 화투등의 도박은 금지하므로 양해바랍니다.
+              - 애완동물은 부득이 타 객실 및 손님을 위해 입실을 금지하오니 양해바랍니다.
+              - 쓰레기는 음식물 쓰레기와 일반 쓰레기로 분리만 해 두시면 됩니다.
+              - 객실 내에서는 절대 금연이오니 객실 앞 개별테크 및 야외를 이용하시기 바랍니다.
+    .form-group
+      label 예약정보
+      .row.no-gutters.border
+        .col
+          .wrap
+            textarea.form-control-plaintext.
+              [예약안내]
+              ㅁ 펜션연락처는 예약과 동시에 고객님의 휴대폰으로 자동발송됩니다.
+              ㅁ 예약 전 취소수수료를 꼭 확인바랍니다.
+
+              [입퇴실안내]
+              - 입실시간 : 오후 3시 부터(입실시간 외 입실시 사전연락 필요)
+              - 퇴실시간 : 오전 11시 까지(운영자에게 key 반납 및 시설물 점검이 필요합니다.)
+              - 밤 22시 이후 입실시에는 사전에 협의하에 가능하며, 늦은시간 입실시 입실이 거부 될수 있습니다.
+        .col.bg-light.updated
+          .wrap
+            textarea.form-control-plaintext.text-onda(readonly).
+              예약방법
+              - 예약은 실시간 예약을 기준으로 하며, 인터넷예약 방법을 참고하시기 바랍니다.
+              - 성수기 기간에는 예약 후 3시간 이내에 입금하셔야 합니다.
+              - 전화예약의 경우 추후 예약을 취소하실 경우 “환불 위약금” 이 발생하나 이에 대하여 제대로 공지되지 못하는 사례가 있어
+              부득이한 경우(전산장애..등) 외에는 실시간예약을 이용하여 주시기 바랍니다.
+              - 예약시 예약자와 입금자가 다를 경우 꼭 기입해 주시기 바랍니다.(입금확인 전까지 예약완료 처리가 안됩니다)
+              - 예약시 예약금은 예약 후 12시간 이내에 100% 입금을 기준으로 하며, 당일과 하루전 예약은 예약후 1시간 이내로 입금을 원칙으로 합니다.
+              입퇴실안내
+
+              - 입실시간 : 오후 3시부터 (입실시간 외 입실시 사전연락 필요)
+              - 퇴실시간 : 오전 11시까지 (운영자에게 key 반납 및 시설물 점검이 필요합니다.)
+              - 밤 22시 이후 입실시에는 사전에 협의하에 가능하며, 늦은시간 입실시 입실이 거부 될수 있습니다.
+      .row
+        .col
+        .col
+          .text-right
+            small.text-onda 업데이트: 2018-06-02 17:22
+          .text-center
+            button.btn.btn-onda.btn-small.ml-1(type='button')
+              i.fa.fa-arrow-left.fa-lg.mr-1
+              | 동기화
+            button.btn.btn-white.btn-small.ml-1(type='button')
+              i.fa.fa-times.fa-lg.mr-1
+              | 변경사항 무시
+    .form-group
+      label
+        | 공지
+        img.ml-2(src='/images/info.svg', data-toggle='tooltip', title='프로모션 등의 예약공지 정보를 입력해 주세요.')
+      .row.no-gutters.border
+        .col.bg-dirty
+          .wrap
+            textarea.form-control-plaintext.
+              수정된 경우 노란배경색으로 표시하고 하단에 변경취소 버튼 표시
+        .col.bg-light
+      .row
+        .col
+          .text-center.mt-2
+            button.btn.btn-white.btn-small.ml-1(type='button') 변경취소
+        .col
+    .form-group
+      label 체크인/체크아웃
+      .row.no-gutters.border
+        .col
+          .p-4
+            .input-group.mb-2
+              .input-group-prepend
+                .input-group-text(style='width:8rem') 체크인 시작
+              input.form-control(type='time')
+            .input-group.mb-2
+              .input-group-prepend
+                .input-group-text(style='width:8rem') 체크인 마감
+              input.form-control(type='time')
+            .input-group
+              .input-group-prepend
+                .input-group-text(style='width:8rem') 체크아웃 마감
+              input.form-control(type='time')
+        .col.bg-light
+    .form-group
+      label.label-necessary 사진
+      .row.no-gutters.border
+        .col
+          .p-4
+            .image-upload.form-row.mt-2
+              .unit.grabbable.col-3.first-image(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+
+            //- 기본
+            .d-flex
+              button.btn.btn-white.btn-small.mr-3(type='button')
+                img(src='/assets/images/ic-camera.svg', style='position:relative; top:-2px; margin-right: 5px')
+                span 이미지 추가
+              button.btn.btn-white.btn-small(type='button') 수정
+
+            //- 수정 중
+            //- .d-flex
+              button.btn.btn-white.btn-small.mr-3(type='button')
+                img(src='/assets/images/ic-camera.svg', style='position:relative; top:-2px; margin-right: 5px')
+                span 이미지 추가
+              button.btn.btn-secondary.btn-small.mr-1(type='button') 취소
+              button.btn.btn-onda.btn-small(type='button') 저장
+              .info.ml-2 사진순서는 드래그로 변경 가능하며, 1번 사진이 대표 사진으로 설정됩니다.
+              button.btn.btn-white.btn-small.ml-auto(type='button')
+                i.fa.fa-trash.fa-lg.mr-1
+                span 전체삭제
+
+        .col.bg-light
+          .p-4
+            .image-upload.form-row.mt-2
+              .unit.grabbable.col-3
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+    .form-group
+      label.label-necessary 숙소특성
+      .row.no-gutters.border
+        .col
+          .p-4
             .check-group
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
@@ -202,10 +318,14 @@ include ./includes/gds-left-nav.pug
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
                 span.custom-control-label 키즈펜션
-      .form-group.row
-        label.label-necessary.col-2.pt-1 공용시설
-        .col-10
-          .bg-light.px-4.py-3.rounded
+        .col.bg-light
+          .p-4
+            .text-muted beach, sports, pool, 펜션
+    .form-group
+      label.label-necessary 공용시설
+      .row.no-gutters.border
+        .col
+          .p-4
             .check-group
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
@@ -240,66 +360,56 @@ include ./includes/gds-left-nav.pug
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
                 span.custom-control-label 키즈플레이
-      .form-group.row
-        label.label-necessary.col-2.pt-1 서비스
-        .col-10
-          .bg-light.px-4.py-3.rounded
+        .col.bg-light
+          .p-4
+            .text-muted beach, sports, pool, 펜션
+    .form-group
+      label.label-necessary 서비스
+      .row.no-gutters.border
+        .col
+          .p-4
             .check-group
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label WIFI
+                span.custom-control-label 노래방
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label 반려동물
+                span.custom-control-label 매점/편의점
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label 발렛파킹
+                span.custom-control-label 바베큐장
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label 셔틀버스
+                span.custom-control-label 세미나실
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label 조식
+                span.custom-control-label 수영장
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label 짐보관
+                span.custom-control-label 카페
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label 취사가능
+                span.custom-control-label 피트니스
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label 프린터사용
+                span.custom-control-label 공용스파
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label 픽업
+                span.custom-control-label 골프장
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label 금연
+                span.custom-control-label 레스토랑
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
-                span.custom-control-label 객실내흡연
-              label.custom-control.custom-checkbox
-                input.custom-control-input(type='checkbox')
-                span.custom-control-label 개인사물함
-              label.custom-control.custom-checkbox
-                input.custom-control-input(type='checkbox')
-                span.custom-control-label 무료주차
-              label.custom-control.custom-checkbox
-                input.custom-control-input(type='checkbox')
-                span.custom-control-label 장애인편의
-              label.custom-control.custom-checkbox
-                input.custom-control-input(type='checkbox')
-                span.custom-control-label 공항셔틀
-              label.custom-control.custom-checkbox
-                input.custom-control-input(type='checkbox')
-                span.custom-control-label 바/라운지
-              label.custom-control.custom-checkbox
-                input.custom-control-input(type='checkbox')
-                span.custom-control-label 마사지
-      .form-group.row
-        label.label-necessary.col-2.pt-1 주변관광지
-        .col-10
-          .bg-light.px-4.py-3.rounded
+                span.custom-control-label 키즈플레이
+        .col.bg-light
+          .p-4
+            .text-muted beach, sports, pool, 펜션
+    .form-group
+      label.label-necessary 주변관광지
+      .row.no-gutters.border
+        .col
+          .p-4
             .check-group
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
@@ -316,154 +426,180 @@ include ./includes/gds-left-nav.pug
               label.custom-control.custom-checkbox
                 input.custom-control-input(type='checkbox')
                 span.custom-control-label 강/호수주변
-      .form-group.row
-        label.col-2.pt-1
-          | 검색키워드
-          img.ml-2(src='/images/info.svg', data-toggle='tooltip', title='위에 없는 새로운 검색 키워드를 등록할 수 있습니다.')
-        .col-10
-          .tags
-            button.btn.btn-outline-onda(type='button') Wifi
-            button.btn.btn-outline-onda(type='button') 가족여행
-            button.btn.btn-outline-onda(type='button') 가족펜션
-            button.btn.btn-outline-onda(type='button') 가족펜션추천
-            button.btn.btn-outline-onda(type='button') 강인근펜션
-            button.btn.btn-outline-onda(type='button') 구급상자
-            button.btn.btn-outline-onda(type='button') 래프팅
-            button.btn.btn-outline-onda(type='button') 매점운영
-            button.btn.btn-outline-onda(type='button') 바닷가근처펜션
-            button.btn.btn-outline-onda(type='button') 바베큐장
-            button.btn.btn-outline-onda(type='button') 부안가볼만한펜션
-            button.btn.btn-outline-onda(type='button') 비상약
-            button.btn.btn-outline-onda(type='button') 수상레저펜션
-            button.btn.btn-outline-onda(type='button') 수영장있는펜션
-            button.btn.btn-outline-onda(type='button') 스파펜션
-            button.btn.btn-outline-onda(type='button') 전라북도펜션
-          textarea.form-control(rows="3") Wifi, 가족여행, 가족펜션, 가족펜션추천, 강인근펜션, 구급상자, 래프팅, 매점운영, 바닷가근처펜션, 바베큐장, 부안가볼만한펜션, 비상약, 수상레저펜션, 수영장있는펜션, 스파펜션, 전라북도펜션
-          .row.mt-2
-            .col
-              .info , 로 구분하여서 입력하세요.
-            .col.text-right
-              button.btn.btn-white.mr-1 취소
-              button.btn.btn-onda 저장
-      .form-group.row
-        label.col-2.pt-1 웹사이트 주소
-        .col-10
-          .d-flex
+        .col.bg-light
+          .p-4
+            .text-muted beach, sports, pool, 펜션
+    .form-group
+      label
+        | 검색키워드
+        img.ml-2(src='/images/info.svg', data-toggle='tooltip', title='위에 없는 새로운 검색 키워드를 등록할 수 있습니다.')
+      .row.no-gutters.border
+        .col
+          .p-4
+            .tags
+              button.btn.btn-outline-onda(type='button') Wifi
+              button.btn.btn-outline-onda(type='button') 가족여행
+              button.btn.btn-outline-onda(type='button') 가족펜션
+              button.btn.btn-outline-onda(type='button') 가족펜션추천
+              button.btn.btn-outline-onda(type='button') 강인근펜션
+              button.btn.btn-outline-onda(type='button') 구급상자
+              button.btn.btn-outline-onda(type='button') 래프팅
+              button.btn.btn-outline-onda(type='button') 매점운영
+              button.btn.btn-outline-onda(type='button') 바닷가근처펜션
+              button.btn.btn-outline-onda(type='button') 바베큐장
+              button.btn.btn-outline-onda(type='button') 부안가볼만한펜션
+              button.btn.btn-outline-onda(type='button') 비상약
+              button.btn.btn-outline-onda(type='button') 수상레저펜션
+              button.btn.btn-outline-onda(type='button') 수영장있는펜션
+              button.btn.btn-outline-onda(type='button') 스파펜션
+              button.btn.btn-outline-onda(type='button') 전라북도펜션
+            textarea.form-control(rows="3") Wifi, 가족여행, 가족펜션, 가족펜션추천, 강인근펜션, 구급상자, 래프팅, 매점운영, 바닷가근처펜션, 바베큐장, 부안가볼만한펜션, 비상약, 수상레저펜션, 수영장있는펜션, 스파펜션, 전라북도펜션
+            .row.mt-2
+              .col
+                .info , 로 구분하여서 입력하세요.
+              .col.text-right
+                button.btn.btn-white.mr-1 취소
+                button.btn.btn-onda 저장
+        .col.bg-light
+    .form-group
+      label 웹사이트 주소
+      .row.no-gutters.border
+        .col
+          .d-flex.p-4
             .input-group
               select.custom-select.inline(style='flex-grow: 0')
                 option http://
                 option https://
               input.form-control(type="text", value='www.soleview.com/fhtml/', style='')
             button.btn.btn-white.btn-small.ml-2(type='button') 바로가기
-      .form-group.row
-        label.label-necessary.col-sm-2.pt-1 주소
-        .col-sm-10
-          button.btn.btn-small.btn-white.mb-2(type='button') 주소찾기
-          .input-group.mb-2
-            .input-group-prepend
-              .input-group-text(style='width: 4.4rem') 지번
-            input.form-control(type='text')
-          .input-group
-            .input-group-prepend
-              .input-group-text(style='width: 4.4rem') 도로명
-            input.form-control(type='text')
-      .form-group.row
-        label.label-necessary.col-2.pt-1 이메일
-        .col-10
-          input.form-control(type='email', value='email@soleview.com')
-      .form-group.row
-        label.label-necessary.col-sm-2.pt-1 대표번호
-        .col-sm-10
-          .form-row
-            .col-2
-              select.custom-select
-                option 010
-            .col-10
-              input.form-control(type='text', value='2222-2222')
-          .info 대표번호는 예약자에게 예약문자 발송시 발신자 번호로 사용됩니다.
-      .form-group.row
-        label.col-sm-2.pt-1 예약문자 수신번호
-        .col-sm-10
-          .d-flex.align-items-center.mb-2
-            label.custom-control.custom-checkbox.mb-0
-              input.custom-control-input(type='checkbox', checked)
-              span.custom-control-label
-            input.form-control.mx-2(type='text', value='010-6395-5135')
-            button.btn.btn-small.btn-white(type='button')
-              img.mr-2(src='/images/plus.svg', style='width: 12px')
-              | 추가
-          .d-flex.align-items-center.mb-2
-            label.custom-control.custom-checkbox.mb-0
-              input.custom-control-input(type='checkbox')
-              span.custom-control-label
-            input.form-control.mx-2(type='text', value='010-6395-5135')
-            button.btn.btn-small.btn-white(type='button')
-              i.fa.fa-trash.fa-lg.mr-1
-              | 삭제
-          .info
-            | 선택한 휴대폰 번호로 예약 관련 메세지를 받아보실 수 있습니다.
-            br
-            | 추가한 휴대폰 번호로도 동일한 메세지가 발송됩니다.(최대 3개)
-      .form-group.row
-        label.label-necessary.col-sm-2.pt-1 공급사 상태
-        .col-sm-10
-          select.custom-select.inline(style='width: 10rem', disabled)
-            option 판매
-      .form-group.row
-        label.label-necessary.col-sm-2.pt-1 검수 상태
-        .col-sm-10
-          select.custom-select.inline(style='width: 10rem')
-            option 검수완료
-      .form-group.row
-        label.col-sm-2.pt-1 판매채널
-        .col-sm-10
-          .ckeckbox-inline
-            label.custom-control.custom-checkbox
-              input.custom-control-input(type='checkbox', checked, disabled)
-              span.custom-control-label GDS
-            label.custom-control.custom-checkbox
-              input.custom-control-input(type='checkbox', checked, disabled)
-              span.custom-control-label 네이버
-            label.custom-control.custom-checkbox
-              input.custom-control-input(type='checkbox', checked, disabled)
-              span.custom-control-label 티몬
-            label.custom-control.custom-checkbox
-              input.custom-control-input(type='checkbox', checked, disabled)
-              span.custom-control-label 올스테이
-            label.custom-control.custom-checkbox
-              input.custom-control-input(type='checkbox', checked, disabled)
-              span.custom-control-label PENSIONBANK(판매안함)
-            label.custom-control.custom-checkbox
-              input.custom-control-input(type='checkbox', checked, disabled)
-              span.custom-control-label 웨어고
-            label.custom-control.custom-checkbox
-              input.custom-control-input(type='checkbox', checked, disabled)
-              span.custom-control-label 여기야
-            label.custom-control.custom-checkbox
-              input.custom-control-input(type='checkbox', checked, disabled)
-              span.custom-control-label 호텔엔조이
-            label.custom-control.custom-checkbox
-              input.custom-control-input(type='checkbox', checked, disabled)
-              span.custom-control-label 실시간 예약창
-            label.custom-control.custom-checkbox
-              input.custom-control-input(type='checkbox', checked, disabled)
-              span.custom-control-label 11번가
-      .form-group.row
-        label.label-necessary.col-sm-2.pt-1 중개수수료
-        .col-sm-10
-          .form-inline
+        .col.bg-light
+    .form-group
+      label.label-necessary 주소
+      .row.no-gutters.border
+        .col
+          .p-4
+            button.btn.btn-small.btn-white.mb-2(type='button') 주소찾기
+            .input-group.mb-2
+              .input-group-prepend
+                .input-group-text(style='width: 4.4rem') 지번
+              input.form-control(type='text')
             .input-group
-              input.form-control(type='number', value='15', style='width: 7.5rem')
-              .input-group-append
-                .input-group-text %
-      .form-group.row
-        label.col-sm-2.pt-1
-          | 판매상태 변경내역
-          .small.text-red (admin)
-        .col-sm-10
-          button.btn.btn-white.btn-small(type='button') 내역보기
+              .input-group-prepend
+                .input-group-text(style='width: 4.4rem') 도로명
+              input.form-control(type='text')
+        .col.bg-light
+          .p-4
+            .text-muted 강원도 양양군
+    .form-group
+      label.label-necessary 이메일
+      .row.no-gutters.border
+        .col
+          .px-4.py-2
+            input.form-control-plaintext(type='email', value='email@soleview.com')
+        .col.bg-light
+          .px-4.py-2
+            input.form-control-plaintext.text-muted(type='email', value='email@soleview.com', readonly)
+    .form-group
+      label.label-necessary 대표번호
+      .row.no-gutters.border
+        .col
+          .p-4
+            .form-row
+              .col-2
+                select.custom-select
+                  option 010
+              .col-10
+                input.form-control(type='text', value='2222-2222')
+            .info 대표번호는 예약자에게 예약문자 발송시 발신자 번호로 사용됩니다.
+        .col.bg-light
 
-      .text-center.mt-5
-        button.btn.btn-lg.btn-onda.px-5(type='button') 저장
+
+    hr.my-5
+    h1.mb-5 GDS Only
+
+    .form-group.row
+      label.col-2.pt-1 예약문자 수신번호
+      .col-4
+        .d-flex.align-items-center.mb-2
+          label.custom-control.custom-checkbox.mb-0
+            input.custom-control-input(type='checkbox', checked)
+            span.custom-control-label
+          input.form-control.mx-2(type='text', value='010-6395-5135')
+          button.btn.btn-small.btn-white(type='button')
+            img.mr-2(src='/images/plus.svg', style='width: 12px')
+            | 추가
+        .d-flex.align-items-center.mb-2
+          label.custom-control.custom-checkbox.mb-0
+            input.custom-control-input(type='checkbox')
+            span.custom-control-label
+          input.form-control.mx-2(type='text', value='010-6395-5135')
+          button.btn.btn-small.btn-white(type='button')
+            i.fa.fa-trash.fa-lg.mr-1
+            | 삭제
+        .info
+          | 선택한 휴대폰 번호로 예약 관련 메세지를 받아보실 수 있습니다.
+          br
+          | 추가한 휴대폰 번호로도 동일한 메세지가 발송됩니다.(최대 3개)
+    .form-group.row
+      label.label-necessary.col-2.pt-1 공급사 상태
+      .col-10
+        select.custom-select.inline(style='width: 10rem', disabled)
+          option 판매
+    .form-group.row
+      label.label-necessary.col-2.pt-1 검수 상태
+      .col-10
+        select.custom-select.inline(style='width: 10rem')
+          option 검수완료
+    .form-group.row
+      label.col-2.pt-1 판매채널
+      .col-10
+        .ckeckbox-inline
+          label.custom-control.custom-checkbox
+            input.custom-control-input(type='checkbox', checked, disabled)
+            span.custom-control-label GDS
+          label.custom-control.custom-checkbox
+            input.custom-control-input(type='checkbox', checked, disabled)
+            span.custom-control-label 네이버
+          label.custom-control.custom-checkbox
+            input.custom-control-input(type='checkbox', checked, disabled)
+            span.custom-control-label 티몬
+          label.custom-control.custom-checkbox
+            input.custom-control-input(type='checkbox', checked, disabled)
+            span.custom-control-label 올스테이
+          label.custom-control.custom-checkbox
+            input.custom-control-input(type='checkbox', checked, disabled)
+            span.custom-control-label PENSIONBANK(판매안함)
+          label.custom-control.custom-checkbox
+            input.custom-control-input(type='checkbox', checked, disabled)
+            span.custom-control-label 웨어고
+          label.custom-control.custom-checkbox
+            input.custom-control-input(type='checkbox', checked, disabled)
+            span.custom-control-label 여기야
+          label.custom-control.custom-checkbox
+            input.custom-control-input(type='checkbox', checked, disabled)
+            span.custom-control-label 호텔엔조이
+          label.custom-control.custom-checkbox
+            input.custom-control-input(type='checkbox', checked, disabled)
+            span.custom-control-label 실시간 예약창
+          label.custom-control.custom-checkbox
+            input.custom-control-input(type='checkbox', checked, disabled)
+            span.custom-control-label 11번가
+    .form-group.row
+      label.label-necessary.col-2.pt-1 중개수수료
+      .col-10
+        .form-inline
+          .input-group
+            input.form-control(type='number', value='15', style='width: 7.5rem')
+            .input-group-append
+              .input-group-text %
+    .form-group.row
+      label.col-2.pt-1
+        | 판매상태 변경내역
+        .small.text-red (admin)
+      .col-10
+        button.btn.btn-white.btn-small(type='button') 내역보기
+
+    .text-center.mt-5
+      button.btn.btn-lg.btn-onda.px-5(type='button') 저장
 
   include ./includes/footer.pug

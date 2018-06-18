@@ -562,13 +562,13 @@ a.link
     font-weight: 600
     margin-bottom: 30px
     color: #222222
-  .head-filter
-    border: 1px solid #929292
-    padding: 20px 40px
-    margin-bottom: 40px
-  .section-title
-    font-size: 18px
-    margin-bottom: 1em
+.head-filter
+  border: 1px solid #929292
+  padding: 20px 40px
+  margin-bottom: 40px
+.section-title
+  font-size: 18px
+  margin-bottom: 1em
 
 footer
   @extend %display-flex
@@ -612,7 +612,7 @@ footer
   align-items: center
   height: 70px
   background-color: $primary
-  padding: 0 40px
+  padding: 0 30px
   color: white
   z-index: 1001
   a
@@ -660,3 +660,22 @@ footer
     padding: 40px 40px 30px 40px
     color: #222222
     border-bottom: 1px solid $border-color
+  &.review
+    input, textarea, .form-control, .form-control-plaintext
+      outline: none !important
+      box-shadow: none
+
+.bg-dirty
+  background-color: #FFF5DB
+
+.wrap
+  textarea
+    width: 100%
+    resize: none
+    overflow-y: hidden
+    padding: 1.1em
+    padding-bottom: 0.2em
+    line-height: 1.6
+
+.updated
+  border: 2px dashed darken(#d4e7ff, 10%)
