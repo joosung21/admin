@@ -1,0 +1,728 @@
+include ./includes/header.pug
+include ./includes/gds-top-nav.pug
+include ./includes/gds-left-nav.pug
+
+#gds-left-nav-second
+  nav
+    a.active(href='#')
+      | 커플룸2 (호텔형)-취사불가
+      .small.text-muted 46348
+    a(href='#')
+      | 커플룸1 (호텔형)-취사불가
+      .small.text-muted 46349
+    a(href='#')
+      | 커플룸3 (호텔형)-취사불가
+      .small.text-muted 46350
+    a(href='#')
+      | 커플룸1 (콘도형)
+      .small.text-muted 46351
+    a(href='#')
+      | 커플룸2 (콘도형)
+      .small.text-muted 46352
+    a(href='#')
+      | 커플룸3 (콘도형)
+      .small.text-muted 46353
+    a(href='#')
+      | 허니문룸
+      .small.text-muted 46354
+    a(href='#')
+      | 가족&단체룸
+      .small.text-muted 46355
+    a(href='#')
+      | 가족룸
+      .small.text-muted 46356
+
+#inner-wrapper.two-depth
+  #gds-content.review
+    .page-title 객실타입
+    select.custom-select.inline.mb-5
+      option(disabled, selected) 다른 객실 정보 가져오기
+      option 커플룸1 (호텔형)-취사불가
+      option 커플룸3 (호텔형)-취사불가
+      option 커플룸1 (콘도형)
+      option 커플룸2 (콘도형)
+      option 커플룸3 (콘도형)
+      option 허니문룸
+      option 가족&단체룸
+      option 가족룸
+    .alert.alert-onda.mb-5 2개의 항목이 검토를 필요로 합니다.
+    .row.mb-5
+      .col
+        h1 GDS
+      .col
+        h1 VENDOR
+    .form-group
+      label.label-necessary 이름
+      .row.no-gutters.border
+        .col
+          .px-4.py-2
+            input.form-control-plaintext(type='text', value='커플룸2 (호텔형)-취사불가')
+        .col.bg-light
+          .px-4.py-2
+            input.form-control-plaintext.text-muted(type='text', value='커플룸2 (호텔형)-취사불가', readonly)
+    .form-group
+      label 판매상태
+      .row.no-gutters.border
+        .col
+        .col.bg-light
+          .p-4
+            .text-muted 판매
+    .form-group
+      label 설명
+      .row.no-gutters.border
+        .col
+          .wrap
+            textarea.form-control-plaintext.
+
+        .col.bg-light
+          .wrap
+            textarea.form-control-plaintext.text-muted(readonly).
+    .form-group
+      label.label-necessary 인원
+      .row.no-gutters.border
+        .col
+          .p-4
+            .form-row
+              .col
+                .input-group
+                  .input-group-prepend
+                    .input-group-text 기준인원
+                  input.form-control(type='number', min='1', value='2')
+              .col
+                .input-group
+                  .input-group-prepend
+                    .input-group-text 최대인원
+                  input.form-control(type='number', min='1', value='4')
+        .col.bg-light
+          .p-4
+            .text-muted min 2, max 4
+    .form-group
+      label 숙박일
+      .row.no-gutters.border
+        .col
+          .p-4
+            .form-row
+              .col
+                .input-group
+                  .input-group-prepend
+                    .input-group-text 최소 숙박일
+                  input.form-control(type='number', min='1', value='1')
+              .col
+                .input-group
+                  .input-group-prepend
+                    .input-group-text 최대 숙박일
+                  input.form-control(type='number', min='0', value='')
+        .col.bg-light
+    .form-group
+      label 객실크기
+      .row.no-gutters.border
+        .col
+          .p-4
+            .form-row
+              .col
+                .input-group
+                  input.form-control(type='number', min='1', value='10')
+                  .input-group-append
+                    .input-group-text 평
+              .col
+                .input-group
+                  input.form-control(type='number', min='1', value='33.1')
+                  .input-group-append
+                    .input-group-text ㎡
+        .col.updated
+          .p-4
+            | 33.057900000000004 ㎡
+      .row
+        .col
+        .col
+          .text-right
+            small.text-muted 업데이트: 2018-06-02 17:22
+          .text-center
+            button.btn.btn-onda.btn-small.ml-1(type='button')
+              i.fa.fa-arrow-left.fa-lg.mr-1
+              | 동기화
+            button.btn.btn-white.btn-small.ml-1(type='button')
+              i.fa.fa-times.fa-lg.mr-1
+              | 변경사항 무시
+
+    .form-group
+      label 객실 내부
+      .row.no-gutters.border
+        .col
+          .p-4
+            .form-row
+              .col
+                .input-group
+                  .input-group-prepend
+                    .input-group-text 주방
+                  input.form-control(type='number', min='0', value='0')
+              .col
+                .input-group
+                  .input-group-prepend
+                    .input-group-text 거실
+                  input.form-control(type='number', min='0', value='0')
+              .col
+                .input-group
+                  .input-group-prepend
+                    .input-group-text 화장실
+                  input.form-control(type='number', min='0', value='0')
+            .form-row.mt-2
+              .col
+                .input-group
+                  .input-group-prepend
+                    .input-group-text 온돌방
+                  input.form-control(type='number', min='0', value='0')
+              .col
+                .input-group
+                  .input-group-prepend
+                    .input-group-text 침대방
+                  input.form-control(type='number', min='0', value='0')
+              .col
+        .col.bg-light
+
+    .form-group
+      label.label-necessary 객실형태
+      .row.no-gutters.border
+        .col
+          .p-4
+            .check-group
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 도미토리형
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 독채형
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 복층형
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 원룸형
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 분리형
+        .col.bg-light
+    .form-group
+      label.label-necessary 객실 내 시설
+      .row.no-gutters.border
+        .col
+          .p-4
+            .check-group
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 가스레인지/인덕션
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 개별/테라스 바베큐
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 기본양념
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 냉장고
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 다리미
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 드라이기
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 미니바
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 벽난로
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 쇼파
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 스파/월풀
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 식탁
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 에어컨
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 욕실용품
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 욕조
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 전기밥솥
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 전자레인지
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 취사도구
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 커피포트
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 타월
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label TV
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 개별 수영장
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 비데
+        .col.updated
+          .p-4
+            | 냉장고, 전기밥솥, 수영장
+      .row
+        .col
+        .col
+          .text-right
+            small.text-muted 업데이트: 2018-06-02 17:22
+          .text-center
+            button.btn.btn-white.btn-small.ml-1(type='button')
+              i.fa.fa-times.fa-lg.mr-1
+              | 변경사항 무시
+    .form-group
+      label.label-necessary 객실사진
+      .row.no-gutters.border
+        .col
+          .p-4
+            .image-upload.form-row.mt-2
+              .unit.grabbable.col-3.first-image(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+              .unit.grabbable.col-3(draggable='true')
+                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                  a.delete(href='#')
+                    i.fa.fa-trash.fa-lg
+                input.form-control.mt-2(type='text', placeholder='사진설명')
+
+            //- 기본
+            .d-flex
+              button.btn.btn-white.btn-small.mr-3(type='button')
+                img(src='/assets/images/ic-camera.svg', style='position:relative; top:-2px; margin-right: 5px')
+                span 이미지 추가
+              button.btn.btn-white.btn-small(type='button') 수정
+
+            //- 수정 중
+            //- .d-flex
+              button.btn.btn-white.btn-small.mr-3(type='button')
+                img(src='/assets/images/ic-camera.svg', style='position:relative; top:-2px; margin-right: 5px')
+                span 이미지 추가
+              button.btn.btn-secondary.btn-small.mr-1(type='button') 취소
+              button.btn.btn-onda.btn-small(type='button') 저장
+              .info.ml-2 사진순서는 드래그로 변경 가능하며, 1번 사진이 대표 사진으로 설정됩니다.
+              button.btn.btn-white.btn-small.ml-auto(type='button')
+                i.fa.fa-trash.fa-lg.mr-1
+                span 전체삭제
+
+        .col.bg-light
+          .p-4
+            .image-upload.form-row.mt-2
+              .unit.grabbable.col-3
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3(draggable='true')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3(draggable='true')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3(draggable='true')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
+              .unit.grabbable.col-3(draggable='true')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
+
+
+    hr.my-5
+    h1.mb-5 Airbnb
+
+    //- .form-inline.mb-5
+      button.btn.btn-white.mr-2(type='button')
+        | 열기
+        i.fa.fa-angle-down.ml-1
+    .form-inline.mb-5
+      .btn-group.btn-group-toggle.mr-4(data-toggle='buttons')
+        label.btn.btn-white.active
+          input(type='radio', name='options', autocomplete='off')
+          | 한국어
+        label.btn.btn-white
+          input(type='radio', name='options', autocomplete='off')
+          | 영어
+      button.btn.btn-white.mr-2(type='button')
+        | 닫기
+        i.fa.fa-angle-up.ml-1
+
+    .form-group
+      label 객실제목
+      .row.no-gutters.border
+        .col
+          .px-4.py-2
+            input.form-control-plaintext(type='text', value='커플룸2 (호텔형)-취사불가')
+        .col.bg-light
+          .px-4.py-2
+            input.form-control-plaintext.text-muted(type='text', value='커플룸2 (호텔형)-취사불가', readonly)
+      .row
+        .col
+          .d-flex
+            .info 10자 이상 입력해 주세요
+            small.text-muted.ml-auto.mt-2 15자
+        .col
+    .form-group
+      label 객실설명
+      .row.no-gutters.border
+        .col
+          .wrap
+            textarea.form-control-plaintext.
+
+        .col.bg-light
+          .wrap
+            textarea.form-control-plaintext.text-muted(readonly).
+
+      .row
+        .col
+          .d-flex
+            .info 50자 이상 입력해 주세요
+            small.text-red.ml-auto.mt-2 0자
+        .col
+
+    .form-group
+      label 객실특성
+      .row.no-gutters.border
+        .col
+          .p-4
+            h6 Basics
+            .check-group.inline
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 필수품목
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 샴푸
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 부엌
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 에어컨
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 헤어드라이어
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 옷걸이
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 다리미
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 세탁기
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 건조기
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label TV
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 케이블TV
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 실내 벽난로
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 무선 인터넷
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 이더넷(Ethernet) 연결 지원
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 포켓 와이파이(Pocket wifi)
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 노트북 작업 공간
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 온수
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 침구
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 여분의 베게와 담요
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 게스트 전용 출입문
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 단독 사용하는 거실
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 침실문 잠금장치
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 초인종
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 도어맨
+            h6.mt-4 Additional - Kitchen
+            .check-group.inline
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 전자레인지
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 커피메이커
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 냉장고
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 식기세척기
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 식기류
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 기본 조리 도구
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 오븐
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 가스레인지
+            h6.mt-4 Additional - Facilities
+            .check-group.inline
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 건물 내 무료 주차
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 헬스장
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 수영장
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 자쿠지 욕조
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 전기차(EV) 충전시설
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 숙소 내 계단 없음
+            h6.mt-4 Additional - Outdoor space
+            .check-group.inline
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 바비큐 그릴
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 파티오 또는 발코니
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 정원 또는 뒷마당
+            h6.mt-4 Additional - Special amenities
+            .check-group.inline
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 아침식사
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 해수욕 필수품
+            h6.mt-4 Family
+            .check-group.inline
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 아기욕조
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 아기 모니터
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 베이비시터 추천 가능
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 욕조
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 기저귀 교환대
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 어린이용 책과 장난감
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 어린이용 식기
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 아기 침대
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 벽난로 안전 장치
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 게임기
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 유아 식사용 의자
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 전원 콘센트 덮개
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 다기능/여행용 아기 침대
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 암막 커튼
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 계단 차단문
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 테이블 모서리 보호대
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 창문 안전장치 설치
+            h6.mt-4 Logistics
+            .check-group.inline
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 여행 가방 보관 가능
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 장기 숙박 가능
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 체크아웃 전 청소
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 가족에게 적합
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 흡연 가능
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 반려동물 입실 가능
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 반려동물을 키우고 있음
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 반려동물을 키우고 있음(개)
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 반려동물을 키우고 있음(고양이)
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 반려동물을 키우고 있음(기타)
+            h6.mt-4 Accessibility
+            .check-group.inline
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 넓은 복도 공간
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 엘리베이터
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 현관문까지 가는 통로의 조명
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 현관문까지 평평한 통로
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 장애인용 주차 공간
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 침대 주변의 넓은 공간
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 높이가 낮은 장애인용 침대
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 샤워부스와 변기 옆 고정 손잡이
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 높이가 낮은 장애인용 변기
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 읙자가 있고 휠체어로 접근 가능한 샤워부스
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 샤워의자가 있는 욕조
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 샤워기와 변기 주변의 넓은 공간
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 손으로 움직일 수 있는 샤워기 헤드
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 넓은 출입문
+            h6.mt-4 Home safety
+            .check-group.inline
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 소화기
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 일산화탄소 감지기
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 화재 감지기
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 구급 상자
+            h6.mt-4 Location
+            .check-group.inline
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 해변과 인접
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 호수로 연결됨
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 스키를 탄 채로 출입 가능
+              label.custom-control.custom-checkbox
+                input.custom-control-input(type='checkbox')
+                span.custom-control-label 호수나 강과 인접
+        .col.bg-light
+          .p-4
+            .text-muted 에어컨, 헤어드라이어, TV, Wifi
+
+
+
+
+
+
+
+    .text-center.mt-5
+      button.btn.btn-lg.btn-onda.px-5(type='button') 저장
+
+  include ./includes/footer.pug

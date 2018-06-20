@@ -87,6 +87,11 @@ app.get('/gds/policy', function (req, res){
   res.render('gds-policy', {page_name: 'policy'})
 })
 
+// 객실타입
+app.get('/gds/roomtypes', function (req, res){
+  res.render('gds-roomtypes', {page_name: 'roomtypes'})
+})
+
 
 // Error Page
 app.get('*', function (req, res){res.render('404')})

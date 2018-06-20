@@ -5,14 +5,10 @@ include ./includes/gds-left-nav.pug
 #inner-wrapper
   #gds-content.review
     .page-title 업체정보
-    .head-filter.p-3
-      .d-flex
-        button.btn.btn-onda.ml-2(type='button') 저장
-        span.info.ml-2 2개의 항목이 수정되었습니다.
-        .form-inline.ml-auto
-          button.btn.btn-white.ml-2(type='button') 콘텐츠 동기화
-          button.btn.btn-white.ml-2(type='button') 이미지 동기화
-          button.btn.btn-white.ml-2(type='button') 판매사 동기화
+    .form-inline.mb-5
+      button.btn.btn-white.mr-2(type='button') 콘텐츠 동기화
+      button.btn.btn-white.mr-2(type='button') 이미지 동기화
+      button.btn.btn-white.mr-2(type='button') 판매사 동기화
     .alert.alert-onda.mb-5 1개의 항목이 검토를 필요로 합니다.
     .row.mb-5
       .col
@@ -270,21 +266,21 @@ include ./includes/gds-left-nav.pug
           .p-4
             .image-upload.form-row.mt-2
               .unit.grabbable.col-3
-                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
               .unit.grabbable.col-3
-                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
               .unit.grabbable.col-3(draggable='true')
-                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
               .unit.grabbable.col-3(draggable='true')
-                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
               .unit.grabbable.col-3(draggable='true')
-                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
               .unit.grabbable.col-3(draggable='true')
-                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
               .unit.grabbable.col-3(draggable='true')
-                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
               .unit.grabbable.col-3(draggable='true')
-                .image(style='background-image: url("/assets/images/temp-image.jpg")')
+                .image.gray-filter(style='background-image: url("/assets/images/temp-image.jpg")')
     .form-group
       label.label-necessary 숙소특성
       .row.no-gutters.border

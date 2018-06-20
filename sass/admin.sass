@@ -240,7 +240,6 @@ a.link
         display: block
         content: ""
         padding-top: 75%
-
       .reload-container
         position: absolute
         top: 0
@@ -303,6 +302,13 @@ a.link
       height: 130px
       border: 1px solid $border-color
       @extend %cover-image
+      &.gray-filter
+        filter: grayscale(100%)
+        opacity: .5
+        transition: all .3s
+        &:hover
+          filter: grayscale(0%)
+          opacity: 1
     &.first-image
       .image:before
         position: absolute
@@ -465,6 +471,10 @@ a.link
     font-size: .9rem
     .custom-control-label
       padding-top: 1px
+  &.inline
+    .custom-checkbox
+      width: auto
+      margin: .4rem 2.2rem .4rem .2rem
 
 //----------- 로그인 ---------------//
 .login
@@ -504,6 +514,10 @@ a.link
   margin-left: 220px
   width: calc(100% - 220px)
   min-width: 1000px
+  &.two-depth
+    margin-left: 440px
+    width: calc(100% - 440px)
+    min-width: 780px
 #left-nav
   position: fixed
   top: 0
@@ -604,9 +618,6 @@ footer
       color: #4f4f4f
 
 //------------ GDS Layout --------------//
-#gds-inner-wrapper
-  width: calc(100% - 220px)
-  min-width: 1000px
 #gds-top-nav
   position: fixed
   top: 0
@@ -651,6 +662,26 @@ footer
       color: #222222
       &.active
         background-color: white
+
+#gds-left-nav-second
+  position: fixed
+  top: 0
+  left: 220px
+  margin-top: 70px
+  width: 220px
+  height: 100vh
+  background-color: white
+  box-shadow: 5px 0 5px 0 rgba(black, .1)
+  nav
+    margin-top: 24px
+    a
+      display: block
+      align-items: center
+      padding: 14px 30px
+      transition: background .3s
+      color: #222222
+      &.active
+        color: $onda
 
 #gds-content
   margin-top: 70px
