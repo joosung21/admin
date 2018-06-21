@@ -8,6 +8,12 @@ $washed-navy: #7D90A8
 $white-gray: #f2f3f8
 $border-color: #e5e5e5
 
+$available: #A1CFFF
+$waiting: $blue
+$complete: $red
+$callonly: #FFB822
+$blocked: $light
+
 //------------ Extends -------------//
 %display-flex
   display: table-cell // ie9
@@ -157,6 +163,18 @@ a.link
     td
       opacity: .4
 
+.table-bordered
+  thead
+    th, td
+      border: 1px solid $border-color !important
+      border-bottom: none !important
+
+  .table-bordered-list
+  td
+    border-right: 1px solid $border-color
+    &:last-child
+      border-right: none
+
 .table-dl
   border-top: 1px solid #929292
   td, .btn
@@ -164,12 +182,6 @@ a.link
   .title
     width: 10rem
     padding-left: 2rem
-
-.table-bordered-list
-  td
-    border-right: 1px solid $border-color
-    &:last-child
-      border-right: none
 
 .pagination
   .page-link
@@ -713,9 +725,143 @@ footer
     line-height: 1.6
 
 .updated
-  // border: 2px dashed darken(#d4e7ff, 10%)
   border: 1px solid darken(#d4e7ff, 2%)
   background: lighten(#d4e7ff, 5%)
   margin-top: -1px
   margin-bottom: -1px
   margin-right: -1px
+
+// 요금표 달력
+.calendar-controler
+  .year-month
+    color: #222222
+    font-size: 2rem
+    font-weight: 400
+  .btn-white
+    padding-bottom: .5rem
+
+.status-badge
+  position: relative
+  display: inline-block
+  flex-shrink: 0
+  background-color: $available
+  color: white
+  width: 12px
+  height: 12px
+  box-sizing: content-box
+  padding: 8px
+  border-radius: 2px
+  &:before
+    position: absolute
+    left: calc(50% - 7px)
+    top: calc(50% - 7px)
+    font-size: 14px
+    line-height: 14px
+    font-weight: 400
+  &.available
+    background-color: $available
+    &:before
+      content: '가'
+      text-shadow: 0 0 2px #4B95FF
+  &.complete
+    background-color: $complete
+    &:before
+      content: '완'
+  &.waiting
+    background-color: $waiting
+    &:before
+      content: '대'
+  &.callonly
+    background: $callonly url('/assets/images/callonly.svg') 8px 9px no-repeat
+    background-size: 11px
+  &.blocked
+    background: $blocked url('/assets/images/blocked.svg') 8px 8px no-repeat
+    background-size: 13px
+
+.status-model
+  align-items: flex-end
+  font-size: 0.85rem
+  .status-badge
+    padding: .15rem
+    margin-right: .3rem
+    flex-shrink: 0
+    &.callonly
+      background-position: 3px 3px
+    &.blocked
+      background-position: 2px 2px
+    &:before
+      left: calc(50% - 5px)
+      top: calc(50% - 5px)
+      font-size: 10px
+      line-height: 10px
+
+.table-calendar
+  width: 100%
+  min-width: 900px
+  th, td
+    padding: .8rem
+    width: 14.29%
+    vertical-align: top
+    z-index: 1
+  .dimed
+    opacity: .4
+  .today
+    box-shadow: inset 1px 1px 0 0 #222222
+    border-color: #222222
+    z-index: 20
+    .room
+      margin-right: -.7rem
+      margin-left: -.7rem
+      padding-right: .7rem
+      padding-left: .7rem
+  thead
+    th
+      text-align: center
+      font-weight: 400
+  tbody
+    td.past-day
+      .day-header, .room, .price
+        opacity: .4
+
+    td.other-month
+      background-color: $white-gray
+    .day-header
+      @extend %display-flex
+      align-items: center
+      margin-bottom: .5rem
+      .season
+        margin-left: auto
+        font-size: .9rem
+    .room
+      @extend %display-flex
+      align-items: center
+      margin: 0 -.8rem
+      padding: .3rem .8rem
+      cursor: pointer
+      .name
+        padding: 0 5px
+        line-height: 1rem
+      .stock
+        margin-left: auto
+        font-size: .85rem
+      &.dimed
+        color: $light
+    .price
+      @extend %display-flex
+      margin: .4rem 0
+      align-items: flex-end
+      .channel
+        font-size: .85rem
+      .value
+        margin-left: auto
+        text-align: right
+  tbody
+    .status-badge
+      cursor: pointer
+      transition: all .3s
+      &:hover
+        box-shadow: inset 0 0 0 1rem rgba(0, 0, 0, .05)
+    th
+      font-weight: 300
+    td
+      line-height: 1rem

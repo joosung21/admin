@@ -92,6 +92,14 @@ app.get('/gds/roomtypes', function (req, res){
   res.render('gds-roomtypes', {page_name: 'roomtypes'})
 })
 
+// 요금표 달력
+app.get('/gds/calendar', function (req, res){
+  res.render('gds-calendar', {page_name: 'calendar'})
+})
+
+
+
+
 
 // Error Page
 app.get('*', function (req, res){res.render('404')})
