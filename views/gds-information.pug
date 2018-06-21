@@ -1,0 +1,115 @@
+include ./includes/header.pug
+include ./includes/gds-top-nav.pug
+include ./includes/gds-left-nav.pug
+
+#inner-wrapper
+  #gds-content
+    .page-title 정산정보
+    .content-container
+      .form-group.row
+        label.label-necessary.col-3.pt-1 은행
+        .col-9
+          .form-row
+            .col-3
+              select.custom-select
+                option 은행선택
+            .col-6
+              input.form-control(type='text', placeholder='계좌번호')
+            .col-3
+              input.form-control(type='text', placeholder='예금주')
+      .form-group.row
+        label.label-necessary.col-3.pt-1 사업자 구분
+        .col-9
+          label.custom-control.custom-radio.custom-control-inline.mr-4
+            input.custom-control-input(type='radio', name='radio1', checked)
+            span.custom-control-label 사업자
+          label.custom-control.custom-radio.custom-control-inline
+            input.custom-control-input(type='radio', name='radio1')
+            span.custom-control-label 개인
+
+      //- 사업자
+      .form-group.row
+        label.label-necessary.col-3.pt-1 사업자 번호
+        .col-9
+          input.form-control(type='text')
+      .form-group.row
+        label.label-necessary.col-3.pt-1 사업자 상호
+        .col-9
+          input.form-control(type='text')
+      .form-group.row
+        label.label-necessary.col-3.pt-1 사업장 소재지
+        .col-9
+          input.form-control(type='text')
+      .form-group.row
+        label.label-necessary.col-3.pt-1 대표자
+        .col-9
+          input.form-control(type='text')
+      .form-group.row
+        label.col-3.pt-1 업태
+        .col-9
+          input.form-control(type='text')
+      .form-group.row
+        label.col-3.pt-1 종목
+        .col-9
+          input.form-control(type='text')
+      .form-group.row
+        label.col-3.pt-1 세금계산서 수신 이메일
+        .col-9
+          input.form-control(type='email')
+      .form-group.row
+        label.label-necessary.col-3.pt-1 적용시점
+        .col-9
+          .form-inline
+            label.custom-control.custom-radio.custom-control-inline.mr-4
+              input.custom-control-input(type='radio', name='radio1', checked)
+              span.custom-control-label 즉시
+            label.custom-control.custom-radio.custom-control-inline
+              input.custom-control-input(type='radio', name='radio1')
+              span.custom-control-label 날짜지정
+            input.form-control.form-control-datepicker(type='text', value='2017.07.16(수)', size='18')
+
+      //- 개인
+      //- .form-group.row
+      //-   label.label-necessary.col-3.pt-1 주민등록번호
+      //-   .col-9
+      //-     input.form-control(type='text')
+      //- .form-group.row
+      //-   label.label-necessary.col-3.pt-1 대표자
+      //-   .col-9
+      //-     input.form-control(type='text')
+      //- .form-group.row
+      //-   label.col-3.pt-1 세금계산서 수신 이메일
+      //-   .col-9
+      //-     input.form-control(type='email')
+      //- .form-group.row
+      //-   label.label-necessary.col-3.pt-1 적용시점
+      //-   .col-9
+      //-     .form-inline
+      //-       label.custom-control.custom-radio.custom-control-inline.mr-4
+      //-         input.custom-control-input(type='radio', name='radio2', checked)
+      //-         span.custom-control-label 즉시
+      //-       label.custom-control.custom-radio.custom-control-inline
+      //-         input.custom-control-input(type='radio', name='radio2')
+      //-         span.custom-control-label 날짜지정
+      //-       input.form-control.form-control-datepicker(type='text', value='2017.07.16(수)', size='18')
+
+      .text-center.mt-5
+        button.btn.btn-lg.btn-onda.px-5(type='button') 저장
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  include ./includes/footer.pug

@@ -97,6 +97,11 @@ app.get('/gds/calendar', function (req, res){
   res.render('gds-calendar', {page_name: 'calendar'})
 })
 
+// 정산정보
+app.get('/gds/information', function (req, res){
+  res.render('gds-information', {page_name: 'information'})
+})
+
 
 
 
